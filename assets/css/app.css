@@ -6995,7 +6995,7 @@ ul.icons li [class*=" icon-"] {
 /* -------------------------------------------------------------------------*/
 /* Generate Sprites */
 .sprites-sprite, .sprites-mcq-bottom, .sprites-mcq-left {
-  background: url('../images/sprites-sc3b519c402.png') no-repeat;
+  background: url('../images/sprites-s78e9550da7.png') no-repeat;
 }
 
 .sprites-mcq-bottom {
@@ -7593,7 +7593,7 @@ a:hover {
     position: absolute;
     top: 0;
     left: 0;
-    height: 50px;
+    height: 60px;
     width: 17px;
     z-index: -1;
   }

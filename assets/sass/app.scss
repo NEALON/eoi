@@ -334,7 +334,7 @@ a:hover { text-decoration: none; }
         .wrapper-faqs { margin: {right: -$column-gutter; left: 0;}
           .lead { padding: emCalc(12px, 18px) 18% emCalc(10px, 18px) emCalc(12px, 18px); 
             > img { display: block; }
-          }
+          }          
           .faq-accordion { margin-right: -17%; font-size: emCalc(16px); } 
         }
       }
@@ -350,7 +350,7 @@ a:hover { text-decoration: none; }
       @media #{$small} {
         .most-common-questions { padding: 10px emCalc(20px) 83px 18%; margin: {left: 0; right: 0;}
           > ul { margin-left: 19%; }
-          .sprites-mcq-left { position: absolute; top: 0; left: 0; height: 50px; width: 17px; z-index: -1; }
+          .sprites-mcq-left { position: absolute; top: 0; left: 0; height: 60px; width: 17px; z-index: -1; }
           .sprites-mcq-bottom { position: absolute; bottom: 0; right: 0; height: 83px; max-width: 350px; width: 100%; z-index: -1; }
         }
       }
