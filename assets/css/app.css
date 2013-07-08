@@ -7468,6 +7468,11 @@ a:hover {
     float: left;
   }
 }
+@media (max-width: 880px) and (min-width: 768px) {
+  .wrapper-content #content .wrapper-faq-content .description {
+    font-size: 0.75em;
+  }
+}
 .wrapper-content #content .wrapper-faq-content .description {
   margin-top: 0.9375em;
   margin-left: 4px;

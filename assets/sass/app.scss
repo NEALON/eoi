@@ -296,6 +296,10 @@ a:hover { text-decoration: none; }
         .right-side { @include grid-column(5); }
       }
       
+      @media #{"(max-width: 880px) and (min-width: #{$small-screen})"} {
+        .description { font-size: emCalc(12px); }
+      }
+      
       .description { margin: {top: emCalc(15px); left: 4px; right: 20%;} }
       
       // FAQ's
