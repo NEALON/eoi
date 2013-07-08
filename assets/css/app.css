@@ -1835,7 +1835,7 @@ ul.circle {
 ul.disc {
   list-style-type: disc;
 }
-ul.no-bullet, .wrapper-content #content .wrapper-faq-content .most-common-questions > ul, .wrapper-content #content ul.testimonials-list, .wrapper-content #content .footer-info .wrapper-top > ul, .wrapper-content #content .footer-info .wrapper-bottom > ul, .wrapper-content #content .footer-info .wrapper-bottom .wrapper ul.testimonials-list, .wrapper-content #content .restourant-logos ul, #footer .popular-searches > ul, #footer .copyright .links ul {
+ul.no-bullet, .wrapper-content #content .wrapper-faq-content .most-common-questions > ul, .wrapper-content #content .wrapper-faq-content .did-you-know > ul, .wrapper-content #content ul.testimonials-list, .wrapper-content #content .footer-info .wrapper-top > ul, .wrapper-content #content .footer-info .wrapper-bottom > ul, .wrapper-content #content .footer-info .wrapper-bottom .wrapper ul.testimonials-list, .wrapper-content #content .restourant-logos ul, #footer .popular-searches > ul, #footer .copyright .links ul {
   list-style: none;
 }
 
@@ -6994,12 +6994,16 @@ ul.icons li [class*=" icon-"] {
 
 /* -------------------------------------------------------------------------*/
 /* Generate Sprites */
-.sprites-sprite, .sprites-most-common-questions {
-  background: url('../images/sprites-s317b36c5ae.png') no-repeat;
+.sprites-sprite, .sprites-mcq-bottom, .sprites-mcq-left {
+  background: url('../images/sprites-sc3b519c402.png') no-repeat;
 }
 
-.sprites-most-common-questions {
+.sprites-mcq-bottom {
   background-position: 0 0;
+}
+
+.sprites-mcq-left {
+  background-position: 0 -83px;
 }
 
 /* -------------------------------------------------------------------------*/
@@ -7409,12 +7413,18 @@ a:hover {
 /* -------------------------------------------------------------------------*/
 /* Content page */
 .wrapper-content #content > div {
-  padding: 0 0.625em;
+  padding: 1.25em 0.625em 0;
   background-color: white;
   position: relative;
 }
 .wrapper-content #content > div > :first-child {
   margin-top: 0;
+}
+.wrapper-content #content > div > hr.devider {
+  display: none;
+  border-width: 2px 0 0;
+  border-color: #e6e6e6;
+  margin: 1.5625em -0.625em;
 }
 @media only screen and (min-width: 768px) {
   .wrapper-content #content > div {
@@ -7431,6 +7441,17 @@ a:hover {
     -webkit-border-radius: 0 0 10px 10px;
     -moz-border-radius: 0 0 10px 10px;
     border-radius: 0 0 10px 10px;
+  }
+  .wrapper-content #content > div > hr.devider {
+    display: block;
+  }
+}
+.wrapper-content #content .slideshow-wrapper {
+  margin-top: -1.25em;
+}
+@media only screen and (min-width: 768px) {
+  .wrapper-content #content .slideshow-wrapper {
+    margin-top: 0;
   }
 }
 .wrapper-content #content .wrapper-faq-content {
@@ -7452,6 +7473,23 @@ a:hover {
 .wrapper-content #content .wrapper-faq-content > div:after {
   clear: both;
 }
+.wrapper-content #content .wrapper-faq-content .left-side {
+  position: relative;
+  padding-left: 0.625em;
+  padding-right: 0.625em;
+  width: 100%;
+  float: left;
+}
+.wrapper-content #content .wrapper-faq-content .right-side {
+  position: relative;
+  padding-left: 0.625em;
+  padding-right: 0.625em;
+  width: 100%;
+  float: left;
+}
+.wrapper-content #content .wrapper-faq-content .description {
+  margin: 0.9375em 0 1.875em;
+}
 @media only screen and (min-width: 768px) {
   .wrapper-content #content .wrapper-faq-content .left-side {
     position: relative;
@@ -7467,38 +7505,63 @@ a:hover {
     width: 41.66667%;
     float: left;
   }
-}
-@media (max-width: 880px) and (min-width: 768px) {
   .wrapper-content #content .wrapper-faq-content .description {
-    font-size: 0.75em;
+    margin: 0.9375em 20% 1.875em 4px;
   }
-}
-.wrapper-content #content .wrapper-faq-content .description {
-  margin-top: 0.9375em;
-  margin-left: 4px;
-  margin-right: 20%;
 }
 .wrapper-content #content .wrapper-faq-content .wrapper-faqs {
   background: url('../images/blue-top-bg.gif?1373137303') 0 0 repeat-x #3ac5cf;
-  margin-right: -1.25em;
+  margin-left: -0.625em;
+  margin-right: -0.625em;
 }
 .wrapper-content #content .wrapper-faq-content .wrapper-faqs .lead {
-  margin: 0.66667em 18% 0.55556em 0.66667em;
+  padding: 0.66667em 0.625em 0.66667em;
+  margin-bottom: 0;
   color: white;
+  position: relative;
+  z-index: 5;
+}
+.wrapper-content #content .wrapper-faq-content .wrapper-faqs .lead > img {
+  position: absolute;
+  bottom: -1px;
+  right: -21%;
+  width: 45%;
+  max-width: 244px;
+  z-index: -1;
+  display: none;
 }
 .wrapper-content #content .wrapper-faq-content .wrapper-faqs .faq-accordion {
   position: relative;
   z-index: 6;
-  margin-right: -17%;
+  font-size: 0.875em;
 }
 .wrapper-content #content .wrapper-faq-content .wrapper-faqs .faq-accordion .section-container {
   margin-bottom: 0;
 }
+@media only screen and (min-width: 768px) {
+  .wrapper-content #content .wrapper-faq-content .wrapper-faqs {
+    margin-right: -1.25em;
+    margin-left: 0;
+  }
+  .wrapper-content #content .wrapper-faq-content .wrapper-faqs .lead {
+    padding: 0.66667em 18% 0.55556em 0.66667em;
+  }
+  .wrapper-content #content .wrapper-faq-content .wrapper-faqs .lead > img {
+    display: block;
+  }
+  .wrapper-content #content .wrapper-faq-content .wrapper-faqs .faq-accordion {
+    margin-right: -17%;
+    font-size: 1em;
+  }
+}
 .wrapper-content #content .wrapper-faq-content .most-common-questions {
   background: #e8e2d7;
   position: relative;
-  z-index: 5;
-  padding: 10px 1.25em 83px 18%;
+  z-index: 3;
+  padding: 0.9375em 0.625em 0;
+  margin-left: -0.625em;
+  margin-right: -0.625em;
+  margin-bottom: 1.875em;
 }
 .wrapper-content #content .wrapper-faq-content .most-common-questions h3 {
   color: #333333;
@@ -7506,27 +7569,59 @@ a:hover {
   font-size: 1.625em;
   line-height: 1.0;
 }
-.wrapper-content #content .wrapper-faq-content .most-common-questions > ul {
-  margin-left: 19%;
-}
 .wrapper-content #content .wrapper-faq-content .most-common-questions > ul h6 {
   font-size: 1em;
+  text-align: left;
 }
-.wrapper-content #content .wrapper-faq-content .most-common-questions > img {
-  position: absolute;
-  top: -4px;
-  left: -34%;
-  width: 65%;
-  max-width: 244px;
-  z-index: -1;
+@media only screen and (min-width: 768px) {
+  .wrapper-content #content .wrapper-faq-content .most-common-questions {
+    padding: 10px 1.25em 83px 18%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .wrapper-content #content .wrapper-faq-content .most-common-questions > ul {
+    margin-left: 19%;
+  }
+  .wrapper-content #content .wrapper-faq-content .most-common-questions .sprites-mcq-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 17px;
+    z-index: -1;
+  }
+  .wrapper-content #content .wrapper-faq-content .most-common-questions .sprites-mcq-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 83px;
+    max-width: 350px;
+    width: 100%;
+    z-index: -1;
+  }
 }
-.wrapper-content #content .wrapper-faq-content .most-common-questions .sprites-most-common-questions {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 83px;
-  max-width: 350px;
-  width: 100%;
+.wrapper-content #content .wrapper-faq-content .did-you-know {
+  margin: 0 0.9375em 0.9375em;
+}
+.wrapper-content #content .wrapper-faq-content .did-you-know h3 {
+  font-weight: normal;
+}
+.wrapper-content #content .wrapper-faq-content .did-you-know > ul {
+  font-size: 1em;
+}
+.wrapper-content #content .wrapper-faq-content .did-you-know > ul > li {
+  line-height: 1.3;
+  font-size: 1.125em;
+  padding: 0.83333em 1.11111em;
+  border-top: 1px solid #cccccc;
+}
+.wrapper-content #content .wrapper-faq-content .did-you-know > ul > li:first-child {
+  border-top: 0 none;
+}
+@media only screen and (min-width: 768px) {
+  .wrapper-content #content .wrapper-faq-content .did-you-know {
+    padding-left: 26%;
+  }
 }
 .wrapper-content #content .testimonials-list {
   margin: 0;
@@ -7556,7 +7651,7 @@ a:hover {
   margin-top: 3.4375em;
 }
 .wrapper-content #content .footer-info .wrapper-top {
-  background: #3ac5cf;
+  background: url('../images/blue-top-bg.gif?1373137303') 0 0 repeat-x #3ac5cf;
   margin-top: 1.875em;
   margin-left: -0.625em;
   margin-right: -0.625em;
