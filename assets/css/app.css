@@ -7424,7 +7424,7 @@ a:hover {
   display: none;
   border-width: 2px 0 0;
   border-color: #e6e6e6;
-  margin: 1.5625em -0.625em;
+  margin: 1.5625em 0;
 }
 @media only screen and (min-width: 768px) {
   .wrapper-content #content > div {
@@ -7432,7 +7432,6 @@ a:hover {
     -moz-box-shadow: 128px -127px 13px -126px #b3a692, -128px -127px 13px -126px #b3a692;
     box-shadow: 128px -127px 13px -126px #b3a692, -128px -127px 13px -126px #b3a692;
     margin-top: -4.6875em;
-    min-height: 28.125em;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -7444,6 +7443,14 @@ a:hover {
   }
   .wrapper-content #content > div > hr.devider {
     display: block;
+  }
+}
+.wrapper-content #content .inner-content {
+  min-height: 18.75em;
+}
+@media only screen and (min-width: 768px) {
+  .wrapper-content #content .inner-content {
+    padding: 0 1.25em;
   }
 }
 .wrapper-content #content .slideshow-wrapper {
@@ -7558,7 +7565,7 @@ a:hover {
   background: #e8e2d7;
   position: relative;
   z-index: 3;
-  padding: 0.9375em 0.625em 0;
+  padding: 1.875em 0.625em 0;
   margin-left: -0.625em;
   margin-right: -0.625em;
   margin-bottom: 1.875em;
@@ -7566,7 +7573,7 @@ a:hover {
 .wrapper-content #content .wrapper-faq-content .most-common-questions h3 {
   color: #333333;
   font-weight: normal;
-  font-size: 1.625em;
+  font-size: 1.5625em;
   line-height: 1.0;
 }
 .wrapper-content #content .wrapper-faq-content .most-common-questions > ul h6 {
@@ -7602,6 +7609,7 @@ a:hover {
 }
 .wrapper-content #content .wrapper-faq-content .did-you-know {
   margin: 0 0.9375em 0.9375em;
+  font-size: 0.9375em;
 }
 .wrapper-content #content .wrapper-faq-content .did-you-know h3 {
   font-weight: normal;
