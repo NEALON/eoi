@@ -111,9 +111,9 @@ a:hover { text-decoration: none; }
 /* #Header */
 
 #header { background: image-url("header-bg.gif") 0 0 repeat #efe7d6; color: $orange-dark; text-align: center;
-  .logotype { @include inline-block; max-width: 100%; }
+  .logotype { @include inline-block; max-width: 100%; margin: 0 emCalc(10px); }
    
-  .auth-block-mobile { background: $red-light; color: $white; @extend .clearfix; padding: emCalc(14px) 0; margin-bottom: emCalc(14px);
+  .auth-block-mobile { background: $red-light; color: $white; @extend .clearfix; padding: emCalc(10px) 0; margin-bottom: emCalc(9px);
     .description { @include grid-column(7); 
       p{ text-align: left; font: {size: emCalc(12px); weight: bold;} line-height: 1.2; margin-bottom: 0; }
     }
@@ -127,16 +127,22 @@ a:hover { text-decoration: none; }
   }  
   
   // Choose Hotels (Mobile)
-  .choose-hotels { padding-bottom: emCalc(18px);
+  .choose-hotels { padding-bottom: emCalc(18px); font-size: emCalc(14px);
     h3 { font-weight: normal; color: $orange-dark; margin: 0; 
       > span { line-height: 37px; vertical-align: middle; }
       > .button { @include button($button-sml, $orange, $button-radius); margin: 0 0 0 emCalc(10px); }
     }
   }
+  
+  @media #{$small} {
+    .choose-hotels { font-size: 1em; }
+  }
 }
 
 @media #{$small} {
-  #header { text-align: left; padding: emCalc(14px) 0; }
+  #header { text-align: left; padding: emCalc(12px) 0 0; 
+    .logotype { margin: 0; } 
+  }
 }
 
 // Social Icons
@@ -305,7 +311,7 @@ a:hover { text-decoration: none; }
     }
     
     // FAQ Content
-    .wrapper-faq-content { border-top: 1px solid lighten($brown-dark, 40%);
+    .wrapper-faq-content { border-top: 1px solid lighten($brown-dark, 40%); margin: {left: #{-$column-gutter / 2}; right: #{-$column-gutter / 2};} padding: {left: #{$column-gutter / 2}; right: #{$column-gutter / 2};}
       > div { @include grid-row($behavior:nest); }
       
       .left-side { @include grid-column(12); }      
@@ -314,15 +320,15 @@ a:hover { text-decoration: none; }
       .description { margin: emCalc(15px) 0 emCalc(30px); }
       
       @media #{$small} { 
-        .left-side { @include grid-column(7); }      
-        .right-side { @include grid-column(5); }
+        .left-side { @include grid-column(7, false, false, false, false, 5); }      
+        .right-side { @include grid-column(5, false, false, false, 7); }
         
         .description { margin: emCalc(15px) 20% emCalc(30px) 4px; }
       }
       
       // FAQ's
-      .wrapper-faqs { @extend .clearfix; background: image-url("blue-top-bg.gif") 0 0 repeat-x $blue; margin: {left: #{-$column-gutter / 2}; right: #{-$column-gutter / 2}}
-        .lead { padding: emCalc(12px, 18px) #{$column-gutter / 2} emCalc(12px, 18px); margin-bottom: 0; color: $white; position: relative; z-index: 5; 
+      .wrapper-faqs { @extend .clearfix; background: image-url("blue-top-bg.gif") 0 0 repeat-x $blue; margin: {left: #{-$column-gutter / 2}; right: #{-$column-gutter / 2}; bottom: emCalc(20px);}
+        .lead { font-size: emCalc(16px); padding: emCalc(12px, 16px) #{$column-gutter / 2} emCalc(12px, 16px); margin-bottom: 0; color: $white; position: relative; z-index: 5; 
           > img { position: absolute; bottom: -1px; right: -21%; width: 45%; max-width: 244px; z-index: -1; display: none; }
         }
         .faq-accordion { position: relative; z-index: 6; font-size: emCalc(14px); 
@@ -331,8 +337,8 @@ a:hover { text-decoration: none; }
       }
       
       @media #{$small} { 
-        .wrapper-faqs { margin: {right: -$column-gutter; left: 0;}
-          .lead { padding: emCalc(12px, 18px) 18% emCalc(10px, 18px) emCalc(12px, 18px); 
+        .wrapper-faqs { margin: {right: -$column-gutter; left: 0; bottom: 0;}
+          .lead { font-size: emCalc(18px); padding: emCalc(12px, 18px) 18% emCalc(10px, 18px) emCalc(12px, 18px); 
             > img { display: block; }
           }          
           .faq-accordion { margin-right: -17%; font-size: emCalc(16px); } 
@@ -340,7 +346,7 @@ a:hover { text-decoration: none; }
       }
       
       // Most Common Questions 
-      .most-common-questions { background: #e8e2d7; @extend .clearfix; position: relative; z-index: 3; padding: emCalc(30px) #{$column-gutter / 2} 0; margin: {left: #{-$column-gutter / 2}; right: #{-$column-gutter / 2}; bottom: emCalc(30px);}
+      .most-common-questions { border-bottom: 1px solid lighten($brown-dark, 40%); background: #e8e2d7; @extend .clearfix; position: relative; z-index: 3; padding: emCalc(15px) #{$column-gutter / 2} 0; margin: {left: #{-$column-gutter / 2}; right: #{-$column-gutter / 2}; bottom: emCalc(30px);}
         h3 { color: $brown-dark; font-weight: normal; font-size: emCalc(25px); line-height: 1.0; }
         > ul { @extend .clearfix; @extend .no-bullet;
           h6 { font-size: emCalc(14, 14); text-align: left; }
@@ -348,7 +354,7 @@ a:hover { text-decoration: none; }
       }
       
       @media #{$small} {
-        .most-common-questions { padding: 10px emCalc(20px) 83px 18%; margin: {left: 0; right: 0;}
+        .most-common-questions { border-bottom: 0 none; padding: emCalc(10px) emCalc(20px) 83px 18%; margin: {left: 0; right: 0;}
           > ul { margin-left: 19%; }
           .sprites-mcq-left { position: absolute; top: 0; left: 0; height: 60px; width: 17px; z-index: -1; }
           .sprites-mcq-bottom { position: absolute; bottom: 0; right: 0; height: 83px; max-width: 350px; width: 100%; z-index: -1; }
@@ -368,6 +374,10 @@ a:hover { text-decoration: none; }
       @media #{$small} {
         .did-you-know { padding-left: 26%; }
       }
+    }
+    
+    @media #{$small} {
+      .wrapper-faq-content { padding: 0; margin: 0; }
     }
     
     // Testimonials
@@ -438,7 +448,7 @@ a:hover { text-decoration: none; }
     }
     
     // Restaurant Logos
-    .restourant-logos {
+    .restourant-logos { margin-top: emCalc(12px);
       ul { @extend .no-bullet; font-size: 1em; 
         ul { margin-left: 0; }
       }
@@ -489,38 +499,50 @@ a:hover { text-decoration: none; }
 }
 
 // Choose Hotels Button
-.choose-hotels-button { @include button($button-med, $orange-ligth, $button-radius, true); color: $orange-dark!important; }
+.choose-hotels-button { @include button($button-med, $orange-ligth, $button-radius, true); color: $orange-dark!important; font: {family: $font-candara; size: emCalc(21px); weight: normal;} margin-bottom: emCalc(15px, 21px); }
 
 // Order Gift Button    
-.order-gift-button { @include button($button-med, $orange, $button-radius, true); }
+.order-gift-button { @include button($button-med, $orange, $button-radius, true); font: {family: $font-candara; size: emCalc(21px); weight: normal;} margin-bottom: emCalc(15px, 21px); @include text-shadow(#{0 0 3px $black}); }
 
 // Search Restaurants
 .search-resaurants { text-align: center; @include panel($blue, #{5px 10px 0 10px}, true); @include radius; @include inset-shadow($active:false); background: {image: image-url("hungry-bg.png"); position: left bottom; repeat: no-repeat;}
   h2 { margin: 0; }
-  h1, h2, h3, h4, h5, h6 { color: $white; }
+  h1, h2, h3, h4, h5 { color: $white; }
+  h6 { color: $brown-dark; }
   p { margin: {bottom: emCalc(10px); top: emCalc(-15px);} }
-  .button > span { display: none; }  
+  .button { margin-bottom: emCalc(17px, 19px);
+    > span { display: none; }
+  }  
   
   @media #{$medium} {
     .button > span { display: inline; }
   }
   
   // Search Restaurants (Mobile)
-  &.mobile { margin-top: emCalc(14px); @include radius(0); @include box-shadow(#{none}); border: 0 none; padding: emCalc(10px) 0; background-image: none; }
+  &.mobile { margin-top: emCalc(5px); @include radius(0); @include box-shadow(#{none}); border: 0 none; padding: emCalc(5px) 0; background-image: none; 
+    h3 { margin-bottom: 7px; }
+  }
 } 
 
 // Section
 .section-container {
   > section { 
     > .title { border: 1px solid darken($section-border-color, 20%); border-width: 0 0 1px 0; @include transition(#{all .3s});
-      a { text-decoration: none; font-weight: bold; @include transition(#{all .3s}); }
-      &:after { content: ""; display: block; width: 0; height: 0; border: solid emCalc(6px, 14px); border-color: transparent $white transparent transparent; position: absolute; right: emCalc(15px, 14px); top: emCalc(21px, 14px); @include transition(#{all .3s}); }
+      a { position: relative; overflow: hidden; font-size: emCalc(17px); text-decoration: none; font-weight: bold; @include transition(#{all .3s}); }
+      &:after { content: ""; display: block; width: 0; height: 0; border: solid emCalc(6px, 15px); border-color: transparent $white transparent transparent; position: absolute; right: emCalc(15px, 15px); top: emCalc(21px, 15px); @include transition(#{all .3s}); }
+    }
+    
+    @media #{$small} { 
+      > .title {
+        a { font-size: $section-font-size; } 
+        &:after { border: solid emCalc(6px, 14px); border-color: transparent $white transparent transparent; right: emCalc(15px, 14px); top: emCalc(21px, 14px); }
+      }
     }
     
     &.active { 
       > .content { border-bottom: 1px solid $section-border-color; }
       > .title { border-top: 3px solid $blue; border-bottom: 0 none; background: $white;
-        a { color: $brown-dark; }
+        a { color: $brown-dark; white-space: normal; }
         &:after { border-color: $brown-dark transparent transparent transparent; }
       }
     }
@@ -548,9 +570,16 @@ a:hover { text-decoration: none; }
   }
   
   
-  .orbit-slides-container { 
-    > * .orbit-caption { background: $brown-dark; background: rgba($brown-dark, .9); right: 0; bottom: -100%; width: auto; max-width: 70%; @include transition(#{all 1.5s}); 
-      h1, h2, h3, h4, h5, h6 { color: $white; text-align: left; }
+  .orbit-slides-container { font-size: 1em;
+    > * .orbit-caption { padding: emCalc(15px) emCalc(18px); font-size: emCalc(14px); background: $brown-dark; background: rgba($brown-dark, .9); right: 0; bottom: -100%; width: auto; max-width: 70%; @include transition(#{all 1.5s}); 
+      h1, h2, h3, h4, h5, h6 { color: $white; text-align: left; margin: 0; line-height: 1.0; }
+      h1 { margin-bottom: emCalc(10px, 44px); }
+      h2 { margin-bottom: emCalc(10px, 42px); }
+      h3 { margin-bottom: emCalc(10px, 28px); }
+      h4 { margin-bottom: emCalc(10px, 24px); }
+      h5 { margin-bottom: emCalc(10px, 18px); }
+      h6 { margin-bottom: emCalc(10px, 12px); }
+      p { line-height: 1.4; margin-bottom: 0; }
     }
     
     > .active .orbit-caption { bottom: 0; }
@@ -558,6 +587,12 @@ a:hover { text-decoration: none; }
     @media #{$small} {
       > * .orbit-caption { max-width: 50%; }
       > .active .orbit-caption { bottom: emCalc(20px); }
+    }
+  }
+  
+  @media #{$small} {
+    .orbit-slides-container > * .orbit-caption { font-size: 1em; 
+      p { margin-bottom: $paragraph-margin-bottom; }
     }
   }
   
