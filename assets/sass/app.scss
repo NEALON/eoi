@@ -102,6 +102,18 @@ h1, h2, h3, h4, h5, h6 { text-align: center; }
   h1, h2, h3, h4, h5, h6 { text-align: left; }
 }
 
+h1 { font-size: $h1-font-size - emCalc(10px); }
+h2 { font-size: $h2-font-size - emCalc(8px); }
+h3 { font-size: $h3-font-size - emCalc(3px); }
+h4 { font-size: $h4-font-size - emCalc(1px); }
+
+@media #{$small} {
+  h1 { font-size: $h1-font-size; }
+  h2 { font-size: $h2-font-size; }
+  h3 { font-size: $h3-font-size; }
+  h4 { font-size: $h4-font-size; }
+}
+
 h4, h5 { font-weight: normal; }
 h6 { font-family: $font-arial; }
 
@@ -310,26 +322,30 @@ a:hover { text-decoration: none; }
     }
     
     // Polaroid Photobar Gallery
-    .polaroid-photobar-gallery { background: image-url("blue-bottom-bg.gif") 0 bottom repeat-x $blue; }
+    .polaroid-photobar-gallery { background: image-url("blue-bottom-bg.gif") 0 bottom repeat-x $blue; margin: 0 #{-$column-gutter} emCalc(40px); padding: emCalc(20px) emCalc(20px) 0; text-align: center;
+      > div { @include inline-block; margin-bottom: emCalc(-30px);
+        > table { font-size: 1em; border: 0 none; background: transparent; 
+          td { padding: 0; display: none;
+            &:first-child { display: table-cell; 
+              + td, + td + td { display: table-cell; }
+            }
+          }
+          img { @include transition(#{all .5s}); position: relative; background: $white; padding: emCalc(7px); @include box-shadow(#{1px 3px 6px rgba($black, .5)}); 
+            &:hover { 
+              z-index: 3!important; 
+              -webkit-transform: scale(1.1) rotate(0)!important;
+              -moz-transform: scale(1.1) rotate(0)!important;
+              -ms-transform: scale(1.1) rotate(0)!important;
+              -o-transform: scale(1.1) rotate(0)!important;
+              transform: scale(1.1) rotate(0)!important;
+            }
+          }
+        }  
+      }
+    } 
     
     @media #{$small} {
-      .polaroid-photobar-gallery { margin: 0 #{-$column-gutter} emCalc(40px); padding: emCalc(20px) emCalc(20px) 0; text-align: center;
-        > div { @include inline-block; margin-bottom: emCalc(-30px);
-          > table { font-size: 1em; border: 0 none; background: transparent; 
-            td { padding: 0; }
-            img { @include transition(#{all .5s}); position: relative; background: $white; padding: emCalc(7px); @include box-shadow(#{1px 3px 6px rgba($black, .5)}); 
-              &:hover { 
-                z-index: 3!important; 
-                -webkit-transform: scale(1.1) rotate(0)!important;
-                -moz-transform: scale(1.1) rotate(0)!important;
-                -ms-transform: scale(1.1) rotate(0)!important;
-                -o-transform: scale(1.1) rotate(0)!important;
-                transform: scale(1.1) rotate(0)!important;
-              }
-            }
-          }  
-        }
-      } 
+      .polaroid-photobar-gallery > div > table td { display: table-cell; }
     }
     
     // Slideshow Home
