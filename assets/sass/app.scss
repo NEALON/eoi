@@ -1,4 +1,4 @@
-/*
+/*!
  * Author: Eugene Tsurcan 
  * Front End Developer 
  * [http://twitter.com/eugenetsurcan] 
@@ -56,6 +56,9 @@ $fontAwesomePath: "../font";
 // CSS3 Compass-Animation (https://github.com/ericam/compass-animation)
 @import "animation";
 
+// Fancybox - is a tool that offers a nice and elegant way to add zooming functionality for images (https://github.com/fancyapps/fancyBox)
+@import "fancybox";
+
 
 /* -------------------------------------------------------------------------*/
 /* Generate Sprites */
@@ -105,6 +108,9 @@ h6 { font-family: $font-arial; }
 a:hover { text-decoration: none; }
 
 .clearfix { @include clearfix; }
+
+// fancybox
+[data-fancybox] a { @include inline-block; }
 
 
 /* -------------------------------------------------------------------------*/
@@ -301,6 +307,29 @@ a:hover { text-decoration: none; }
     
     @media #{$small} {
       .inner-content { padding: 0 $column-gutter; }
+    }
+    
+    // Polaroid Photobar Gallery
+    .polaroid-photobar-gallery { background: image-url("blue-bottom-bg.gif") 0 bottom repeat-x $blue; }
+    
+    @media #{$small} {
+      .polaroid-photobar-gallery { margin: 0 #{-$column-gutter} emCalc(40px); padding: emCalc(20px) emCalc(20px) 0; text-align: center;
+        > div { @include inline-block; margin-bottom: emCalc(-30px);
+          > table { font-size: 1em; border: 0 none; background: transparent; 
+            td { padding: 0; }
+            img { @include transition(#{all .5s}); position: relative; background: $white; padding: emCalc(7px); @include box-shadow(#{1px 3px 6px rgba($black, .5)}); 
+              &:hover { 
+                z-index: 3!important; 
+                -webkit-transform: scale(1.1) rotate(0)!important;
+                -moz-transform: scale(1.1) rotate(0)!important;
+                -ms-transform: scale(1.1) rotate(0)!important;
+                -o-transform: scale(1.1) rotate(0)!important;
+                transform: scale(1.1) rotate(0)!important;
+              }
+            }
+          }  
+        }
+      } 
     }
     
     // Slideshow Home

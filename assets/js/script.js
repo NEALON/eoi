@@ -17,6 +17,19 @@ var eoi = eoi || {};
     // Init Foundation
     $(document).foundation();
     
+    // Init Fancybox
+    $("[data-fancybox] a, a.fancybox").fancybox({
+      openEffect    : 'elastic',
+      closeEffect   : 'elastic',
+      scrolling     : 'no',
+      helpers       : {
+        title : {
+          type : 'outside'        
+        },
+        media : true
+      }
+    });
+    
     // Navigation Events
     $(document).on('click', '.nav-open', function(e) {
       e.preventDefault();
@@ -43,6 +56,9 @@ var eoi = eoi || {};
         errorElement: "small"
       });
     });
+    
+    // Init Polaroid Photobar Gallery
+    eoi.polaroidPhotobarGallery();
     
   };
   
@@ -75,6 +91,46 @@ var eoi = eoi || {};
       eoi.testimonials({wrapper: wrapper, delay: delay});
     }, delay);  
   };
+  
+  
+  /**
+   * Polaroid Photobar Gallery
+   * 
+   * @param class/id (str) Wrapper element (parent)
+   */
+  eoi.polaroidPhotobarGallery = function(options) {
+    var options   = options || {},
+        wrapper   = options.wrapper || '#polaroid-photobar-gallery';
+    
+    $(wrapper).find('img').each(function() {
+      var image = $(this);
+      
+      // Set Random - rotate
+      r = getRandomInt(-4, 4);
+      image.css('transform', 'rotate('+ r +'deg)');
+      
+      // Set Random - position top
+      r = getRandomInt(-10, 10) / 16;
+      image.css('top', r +'em');
+      
+      // Set Random - position left
+      r = getRandomInt(-3, 3) / 16;
+      image.css('left', r +'em');
+      
+      // Set Random - padding
+      r = getRandomInt(3, 7) / 16;
+      image.css('padding', r +'em');
+      
+      // Set Random - z-index
+      r = getRandomInt(1, 2);
+      image.css('z-index', r);
+    });
+  };
+  
+  // get Random Int between Min and Max
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
   
   
   /**
