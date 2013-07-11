@@ -18,7 +18,7 @@ var eoi = eoi || {};
     $(document).foundation();
     
     // Init Fancybox
-    $("[data-fancybox] a, a.fancybox").fancybox({
+    $("[data-fancybox] a, a[data-fancybox]").fancybox({
       openEffect    : 'elastic',
       closeEffect   : 'elastic',
       scrolling     : 'no',
