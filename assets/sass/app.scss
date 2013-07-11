@@ -131,7 +131,7 @@ a:hover { text-decoration: none; }
 [data-fancybox] a { @include inline-block; }
 
 // Google map
-#map-canvas { padding: 0; margin: 0 0 emCalc(15px); height: emCalc(305px); @extend .clearfix; }
+#map-canvas { border: 1px solid #c5c1b6; padding: 0; margin: 0 0 emCalc(15px); height: emCalc(305px); @extend .clearfix; }
 
 
 /* -------------------------------------------------------------------------*/
@@ -161,12 +161,22 @@ a:hover { text-decoration: none; }
   &.order-gift { @include button($button-med, $orange, $button-radius, true); font: {family: $font-candara; size: emCalc(21px); weight: normal;} margin-bottom: emCalc(15px, 21px); @include text-shadow(#{0 0 3px $black}); }
 }
 
+.no-cssgradients .button {
+  &.order {
+    &:after { background: lighten($blue, 15%); }
+    
+    &:hover {
+      &:after { background: lighten(lighten($blue, 15%), $button-function-factor); }
+    }
+  }
+}
+
 
 /* -------------------------------------------------------------------------*/
 /* #Header */
 
 #header { background: image-url("header-bg.gif") 0 0 repeat #efe7d6; color: $orange-dark; text-align: center;
-  .logotype { @include inline-block; max-width: 100%; margin: 0 emCalc(10px); }
+  .logotype { @include inline-block; max-width: 90%; margin: 0 5%; }
    
   .auth-block-mobile { background: $red-light; color: $white; @extend .clearfix; padding: emCalc(10px) 0; margin-bottom: emCalc(9px);
     .description { @include grid-column(7); 
@@ -301,16 +311,16 @@ a:hover { text-decoration: none; }
     .top-bar { background: transparent; }
     
     .top-bar-section { text-align: center;
-      > ul { @include inline-block; }
+      > ul { @include inline-block; background: transparent; }
     
-      ul, li a:not(.button) { background: transparent; }
+      ul, li a { background: transparent; }
       
       li { 
-        a:not(.button) { @include transition(#{all .08s}); padding: 0 emCalc(18px, 20px); text-decoration: none;
+        a { @include transition(#{all .08s}); padding: 0 emCalc(18px, 20px); text-decoration: none;
           &:hover { @include transition(#{all .25s}); color: lighten($red, 12%); }
         }
         
-        &.active > a:not(.button) { color: lighten($red, 20%); }
+        &.active > a { color: lighten($red, 20%); }
       }
       
       ul li > a { color: $red; font: {size: emCalc(20px); weight: normal;} }
@@ -373,11 +383,12 @@ a:hover { text-decoration: none; }
     // Polaroid Photobar Gallery
     .polaroid-photobar-gallery { background: image-url("blue-bottom-bg.gif") 0 bottom repeat-x $blue; margin: 0 #{-$column-gutter/2} emCalc(40px); padding: emCalc(20px) emCalc(20px) 0; text-align: center;
       > div { @include inline-block; margin-bottom: emCalc(-30px);
-        > table { font-size: 1em; border: 0 none; background: transparent; 
+        > table { font-size: 1em; border: 0 none; background: transparent;
           td { padding: 0; display: none;
             &:first-child { display: table-cell; 
               + td, + td + td { display: table-cell; }
             }
+            a { max-width: 100%; }
           }
           img { @include transition(#{all .5s}); position: relative; background: $white; padding: emCalc(7px); @include box-shadow(#{1px 3px 6px rgba($black, .5)}); 
             &:hover { 
@@ -587,6 +598,15 @@ a:hover { text-decoration: none; }
   }
 }
 
+.lt-ie9 {
+  .polaroid-photobar-gallery > div > table { width: 100%; table-layout: fixed; }
+  .reveal-modal-bg { @include opacity(.45); }
+}
+
+.no-boxshadow {
+  .polaroid-photobar-gallery > div > table img { border: 1px solid lighten($black, 50%); }
+}
+
 // Video thumb
 .video-thumb { margin: emCalc(15px) 0;
   .th { border: 0 none; @include opacity(.8); @include transition(#{all .5s}); 
@@ -599,7 +619,7 @@ a:hover { text-decoration: none; }
   h2 { margin: 0; }
   h1, h2, h3, h4, h5 { color: $white; }
   h6 { color: $brown-dark; }
-  p { margin: {bottom: emCalc(10px); top: emCalc(-15px);} }
+  p { margin: {bottom: emCalc(10px); top: emCalc(-15px);} clear: both; }
   .button { margin-bottom: emCalc(17px, 19px);
     > span { display: none; }
   }  
