@@ -73,36 +73,33 @@ var eoi = eoi || {};
     // check to see if local storage value is set on page load
     localStorage.isResponsive = (localStorage.isResponsive == undefined) ? 'true' : localStorage.isResponsive;
     
-    var showFullSite = function() {    
+    var showFullSite = function(){    
       viewport.attr('content', 'width=' + targetWidth);  
       
-      htmlButtonOptimized = ''+
-        '<p class="text-center show-for-medium-up">'+
-          '<button id="view-full" class="button medium radius alert">View Mobile Optimized</button>'+
-        '</p>';
-        
-      $('#view-options').append(htmlButtonOptimized);
+      if(!$('#view-options #view-responsive').length){
+        $('#view-options').append('View Mobile Optimized');
+      }    
       
       localStorage.isResponsive = 'false';
     }
     
-    var showMobileOptimized = function() {
+    var showMobileOptimized = function(){
       localStorage.isResponsive = 'true';
       viewport.attr('content', 'width=' + deviceWidth);
     }
     
     // if the user previously chose to view full site, change the viewport
-    if(Modernizr.localstorage) {
-      if(localStorage.isResponsive == 'false') {
+    if(Modernizr.localstorage){
+      if(localStorage.isResponsive == 'false'){
         showFullSite();
       }
     }    
     
-    $('#view-full').on('click', function() {
+    $("#view-full").on("click", function(){
       showFullSite();
     });
     
-    $('#view-options').on('click', '#view-responsive', function() {
+    $('#view-options').on("click", "#view-responsive", function(){
       showMobileOptimized();
     });
     
