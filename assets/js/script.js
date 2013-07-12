@@ -78,7 +78,7 @@ var eoi = eoi || {};
       
       htmlButtonOptimized = ''+
         '<p class="text-center show-for-medium-up">'+
-          '<button id="view-full" class="button medium radius alert">View Mobile Optimized</button>'+
+          '<button id="view-responsive" class="button medium radius alert">View Mobile Optimized</button>'+
         '</p>';
         
       $('#view-options').append(htmlButtonOptimized);
