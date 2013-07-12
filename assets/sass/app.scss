@@ -199,7 +199,7 @@ a:hover { text-decoration: none; }
   }  
   
   // Choose Hotels (Mobile)
-  .choose-hotels { padding-bottom: emCalc(18px); font-size: emCalc(14px);
+  .choose-hotels { padding-bottom: emCalc(18px); font-size: emCalc(13px);
     h3 { font-weight: normal; color: $orange-dark; margin: 0; 
       > span { line-height: 37px; vertical-align: middle; }
       > .button { @include button($button-sml, $orange, $button-radius); margin: 0 0 0 emCalc(10px); }
