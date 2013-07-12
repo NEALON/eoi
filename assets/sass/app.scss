@@ -553,6 +553,7 @@ a:hover { text-decoration: none; }
       }
       
       .wrapper-bottom { @include box-shadow(#{inset -6px -6px 40px 10px $red-dark}); background: #c43a2d; color: $white; @extend .clearfix; margin: {left: #{-$column-gutter / 2}; right: #{-$column-gutter / 2}}; padding: {left: #{$column-gutter / 2}; right: #{$column-gutter / 2}} 
+        a { text-decoration: none; color: $white; }
         > ul { position: relative; @extend .no-bullet; @extend .clearfix; font-size: 1em; margin: emCalc(15px) 0;
           > [class^="col-"], > [class*=" col-"] { @include background-image(radial-gradient(68% 50%, darken(#c43a2d, 10%) 20%, rgba(#c43a2d, 0) 100%)); }
           
