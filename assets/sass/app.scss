@@ -393,7 +393,7 @@ a:hover { text-decoration: none; }
     
     // Cuisine Food Image
     .wrapper-food-img { text-align: center; 
-      a { @include inline-block; max-width: 100%; margin: emCalc(15px) 0; }
+      img { @include inline-block; max-width: 100%; margin: emCalc(15px) 0; }
     }
     
     @media #{$small} {
