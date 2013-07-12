@@ -382,27 +382,13 @@ a:hover { text-decoration: none; }
     }
     
     // Popular Chinese Delivery Restaurants
-    .popular-restaurants { font-size: emCalc(18px);
-      > ul { @extend .no-bullet; text-align: center;
-        > li { border-top: 1px solid lighten($brown-dark, 40%); padding: emCalc(10px) 3px; 
-          &:first-child { border: 0 none; }
-        }      
-        h5 { margin: 0; text-align: center;
-          a { text-decoration: none; color: $yellow; 
-            &:hover { text-decoration: underline; color: lighten($yellow, 7%); }
-          }
-        }
-        p { margin: 0; }        
-        .row > .columns:first-child { margin: {top: emCalc(5px, 12px); bottom: emCalc(8px);} 
-          a { @include inline-block; }
-        }
-      }
-    }
-    
-    @media #{$small} {
-      .popular-restaurants { font-size: emCalc(14px);
-        > ul, > ul h5 { text-align: left; }
-      }
+    .popular-restaurants { text-align: center; 
+      img { @include inline-block; }
+      .large-block-grid-2, .large-block-grid-1 { margin-top: emCalc(20px, 14px); 
+        > li { padding-bottom: emCalc(25px, 14px); }
+      }      
+      .large-block-grid-2 img { max-width: 70%; }
+      .large-block-grid-1 img { max-width: 80%; }
     }
     
     // Cuisine Food Image
