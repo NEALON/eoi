@@ -17,8 +17,11 @@ var eoi = eoi || {};
     // Init Foundation
     $(document).foundation();
     
+    // Init Breakpoint Images
+    $('img[data-breakpoint]').breakpoint();
+    
     // Init Fancybox
-    $("[data-fancybox] a, a[data-fancybox]").fancybox({
+    $('[data-fancybox] a, a[data-fancybox]').fancybox({
       openEffect    : 'elastic',
       closeEffect   : 'elastic',
       scrolling     : 'no',
