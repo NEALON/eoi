@@ -53,6 +53,11 @@ var eoi = eoi || {};
     // Init Testiomonials
     eoi.testimonials(); 
     
+    // Init Featured Restaurants
+    eoi.testimonials({
+      wrapper: '#featured-restaurant-list'
+    });
+    
     // Init Validate
     $('form').each(function() {
       $(this).validate({
@@ -69,7 +74,7 @@ var eoi = eoi || {};
      */
     
     // viewport stuff
-    var targetWidth = 768;
+    var targetWidth = 750;
     var deviceWidth = 'device-width';
     var viewport = $('meta[name="viewport"]');
     
