@@ -10,7 +10,7 @@
 // Variables
 
 // Colours
-$white          :#ffffff;
+$white          :#ffffff; 
 $black          :#000000;
 
 $blue           :#3ac5cf;
@@ -531,10 +531,10 @@ a:hover { text-decoration: none; }
         h3 { margin-top: 0; }
         
         .press-unit { border: 1px solid darken($brown-light, 10%); border-width: 1px 0; @include grid-column(12); background: $brown-light; @include box-shadow(#{inset 0 0 emCalc(15px) 0 darken($brown-light, 15%)}); 
-          > div { @extend .clerfix; position: relative; z-index: 1; }
+          > div { @extend .clearfix; position: relative; z-index: 1; }
         }
         .awards-unit { @include grid-column(12); 
-          > div { @extend .clerfix; position: relative; z-index: 1; 
+          > div { @extend .clearfix; position: relative; z-index: 1; 
             ul { @extend .no-bullet; font-style: italic; 
               a { font-style: normal; }
             }
