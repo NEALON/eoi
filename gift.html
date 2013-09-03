@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]> <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  
+  <!--========================================  
+    Author: Eugene Tsurcan  
+    Front End Developer  
+    [http://twitter.com/eugenetsurcan]
+  =========================================-->
+  
+  <meta name="viewport" content="width=device-width" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  
+  <title>Gift Certificates - Eat Out In</title>
+  <meta name="description" content="Restaurant Food Delivery." />
+  
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="apple-touch" size="16x16" href="./touch-icon-16x16.png" />
+  <link rel="apple-touch" sizes="32x32" href="./touch-icon-32x32.png" />
+  <link rel="apple-touch" sizes="48x48" href="./touch-icon-48x48.png" />
+  <link rel="apple-touch" sizes="57x57" href="./touch-icon-57x57.png" />
+  <link rel="apple-touch" sizes="72x72" href="./touch-icon-72x72.png" />
+  <link rel="apple-touch" sizes="114x114" href="./touch-icon-114x114.png" />
+  <link rel="apple-touch" sizes="144x144" href="./touch-icon-144x144.png" />  
+  <meta name="msapplication-TileImage" content="./touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#082b52" />  
+  
+  <link rel="stylesheet" href="./assets/css/app.css" />
+  
+  <!--[if IE 8]><script src="./assets/js/vendor/respond.min.js"></script><![endif]-->
+  
+  <script src="./assets/js/vendor/custom.modernizr.js"></script>
+</head>
+<body>  
+  <!--[if lt IE 9]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+  <![endif]-->
+  
+  <!-- BEGIN: #Header -->
+    <header id="header">
+      
+      <!-- Login/Regestration Block (Mobile) -->
+      <section class="auth-block-mobile show-for-small">
+        <div class="description">
+          <p>Restaurant Food Delivery</p>
+        </div>
+        <div class="links">
+          <p><a href="#">Login</a> &#124; <a href="#">Sign up</a></p>
+        </div>
+      </section>
+      
+      <div class="row">     
+        <div class="columns large-8">
+          <a href="./index.html" class="logotype">
+            <img src="./assets/images/logo.png" alt="Eat Out In" title="Eat Out In" />
+          </a>           
+        </div>
+        
+        <div class="columns large-4 text-right show-for-medium-up">
+          <!-- Login/Regestration Block -->
+          <div class="auth-block">
+            <a href="#" class="button alert tiny radius"><i class="icon-signin"></i> Login</a>
+            <a href="#" class="button alert tiny radius">Create Account</a>
+          </div>
+          
+          <!-- Soc list icons -->
+          <div class="soc-list">
+            <ul class="inline-list">
+              <li><a href="#" title="Phone" class="tel icon-soc"><i class="icon-phone"></i></a></li>
+              <li><a href="#" title="Facebook" class="facebook icon-soc"><i class="icon-facebook"></i></a></li>
+              <li><a href="#" title="Twitter" class="twitter icon-soc"><i class="icon-twitter"></i></a></li>
+              <li><a href="#" title="Pinterest" class="pinterest icon-soc"><i class="icon-pinterest"></i></a></li>
+            </ul>
+          </div>
+        </div>        
+      </div>
+      
+      <!-- Search Restaurants Block (Mobile) -->
+      <section class="search-resaurants mobile show-for-small">
+        <form action="" method="post">
+          <div class="row">
+            <div class="columns large-12">
+              <h3 class="upper text-center">Hungry? <small>Search Restaurants</small></h3>
+              <div class="clearfix">
+                <div class="row collapse">
+                  <div class="columns small-10">
+                    <input class="required" type="text" name="search-restaurants" value="" placeholder="Enter your address here" />
+                  </div>
+                  <div class="columns small-2">
+                    <button class="button alert postfix radius">Go!</button>
+                  </div>
+                </div>
+              </div>
+              <p class="text-center small">e.g. "200 East Colfax Ave, Austin, TX 78630"</p>
+            </div>                    
+          </div>
+        </form>                  
+      </section> 
+      
+      <!-- Choose Hotels Block (Mobile) -->
+      <section class="choose-hotels mobile show-for-small">
+        <div class="row">
+          <div class="columns small-12">
+            <h3 class="text-center"><span>At a Hotel?</span> <a href="#" class="button">Order Room Service</a></h3>
+          </div>
+        </div>
+      </section>
+      
+    </header>
+  <!-- END: #Header -->
+  
+  <!-- BEGIN: #Navigation -->
+    <div id="navigation">
+      <div class="contain-to-grid">
+        <nav class="top-bar">
+          <ul class="title-area">
+            <!-- Title Area -->
+            <li class="name">
+              <div class="devider"></div>
+              <div class="toggle-topbar left"><a href="#"><span>Navigation</span> <i class="icon-chevron-down"></i></a></div>
+              <div class="devider"></div>
+              
+              <!-- Soc list icons -->
+              <div class="soc-list right show-for-small">
+                <ul class="inline-list">
+                  <li><a href="#" title="Phone" class="tel icon-soc"><i class="icon-phone"></i></a></li>
+                  <li><a href="#" title="Facebook" class="facebook icon-soc"><i class="icon-facebook"></i></a></li>
+                  <li><a href="#" title="Twitter" class="twitter icon-soc"><i class="icon-twitter"></i></a></li>
+                  <li><a href="#" title="Pinterest" class="pinterest icon-soc"><i class="icon-pinterest"></i></a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        
+          <section class="top-bar-section">
+            <ul class="clearfix">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./restaurants.html">Restaurants</a></li>
+              <li><a href="#">Business Solutions</a></li>
+              <li><a href="#">Event Catering</a></li>
+              <li><a href="#">Breakfast</a></li>
+              <li><a href="./faq.html">FAQ</a></li>
+              <li><a href="./contact.html">Contact</a></li>
+            </ul>
+          </section>
+        </nav>
+      </div>
+    </div>
+  <!-- END: #Navigation -->
+  
+  <div class="wrapper-content"> 
+    <!-- BEGIN: #Content -->
+      <article id="content" role="main">
+        <div>
+          
+          <div class="inner-content">
+            
+            <!-- Start .wrapper-gift -->
+            <div class="wrapper-gift">
+              
+              <!-- Start .block-gift-center -->
+              <section class="block-gift-center">
+                <h4>Gift Certificates</h4>
+                <hr />
+                <p class="description">Eat Out In gift certificates are a great way to share your good taste with family, friends or clients for any occasion. This gift never expires, can be used for online or phone orders, and it’s refillable!</p>
+                
+                <form class="gift-form">
+                  <div class="row">
+                    <div class="small-12 large-5 columns">
+                      <span class="th radius">
+                        <img src="./assets/images/gift.jpg" alt="" title="" />
+                      </span>
+                    </div>
+                    <div class="small-12 large-7 columns">
+                      <h3>Custom Message</h3>
+                      <p>Select the date you would like to email your gift and enter the amount and name and email address of the recipient. Enter a personalized message if you would like, and then add it to the cart.</p>
+                      
+                      <div class="row">
+                        <div class="small-12 large-8 columns">
+                          <label for="emailed_date" class="large-right title inline">Your gift will be emailed on:</label>
+                        </div>
+                        <div class="small-12 large-4 end columns">
+                          <input type="text" id="emailed_date" name="emailed_date">
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="small-12 large-8 columns">
+                          <label for="amount" class="large-right title inline">Enter the amount your gift:</label>
+                        </div>
+                        <div class="small-12 large-4 end columns">
+                          <input type="text" id="amount" name="amount">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+                  <fieldset class="no-marg-top">
+                    <legend>Ricipient:</legend>
+                    <div class="row">
+                      <div class="small-12 large-2 columns">
+                        <label for="ricipient-name" class="large-right title inline">Name:</label>
+                      </div>
+                      <div class="small-12 large-10 end columns">
+                        <input type="text" id="ricipient-name">
+                      </div>
+                    </div>
+                    
+                    <div class="row">
+                      <div class="small-12 large-2 columns">
+                        <label for="ricipient-email" class="large-right title inline">Email:</label>
+                      </div>
+                      <div class="small-12 large-10 columns">
+                        <input type="text" id="ricipient-email" class="email">
+                      </div>
+                    </div>
+                  </fieldset>
+                  
+                  <fieldset>
+                    <legend>Sender:</legend>
+                    <div class="row">
+                      <div class="small-12 large-2 columns">
+                        <label for="sender-name" class="large-right title inline">Name:</label>
+                      </div>
+                      <div class="small-12 large-10 end columns">
+                        <input type="text" id="sender-name">
+                      </div>
+                    </div>
+                    
+                    <div class="row">
+                      <div class="small-12 large-2 columns">
+                        <label for="sender-email" class="large-right title inline">Email:</label>
+                      </div>
+                      <div class="small-12 large-10 columns">
+                        <input type="text" id="sender-email" class="email">
+                      </div>
+                    </div>
+                  </fieldset>
+                  
+                  <div>
+                    <label for="your-message" class="title inline">Your message:</label>                      
+                    <textarea id="your-message"></textarea>
+                  </div>
+                  
+                  <div>
+                    <input type="submit" name="submit" class="button small alert radius" value="Add to Cart" />
+                  </div>
+                </form>
+              </section>
+              <!-- Close .block-gift-center -->
+              
+              <!-- Start .block-gift-left -->
+              <section class="block-gift-left">
+                <h5>Select your e-gift style</h5>
+                <ul class="no-bullet">                  
+                  <li class="media">
+                    <a href="#">
+                      <span class="left"> <span class="th radius"><img src="./assets/images/gifts/gift-2.png" alt="" title="" /></span> </span>
+                      <span class="media-body"> “Congratulations” </span>
+                    </a>
+                  </li>
+                  <li class="media">
+                    <a href="#">
+                      <span class="left"> <span class="th radius"><img src="./assets/images/gifts/gift-1.png" alt="" title="" /></span> </span>
+                      <span class="media-body">“Thank You”</span>
+                    </a>
+                  </li>
+                  <li class="media">
+                    <a href="#">
+                      <span class="left"> <span class="th radius"><img src="./assets/images/gifts/gift-3.png" alt="" title="" /></span> </span>
+                      <span class="media-body"> “Get Well Soon” </span>
+                    </a>
+                  </li>
+                  <li class="media">
+                    <a href="#">
+                      <span class="left"> <span class="th radius"><img src="./assets/images/gifts/gift-4.png" alt="" title="" /></span> </span>
+                      <span class="media-body"> “Happy Birthday” </span>
+                    </a>
+                  </li>
+                  <li class="media">
+                    <a href="#">
+                      <span class="left"> <span class="th radius"><img src="./assets/images/gifts/gift-5.png" alt="" title="" /></span> </span>
+                      <span class="media-body"> “Happy Anniversary” </span>
+                    </a>
+                  </li>
+                  <li class="media">
+                    <a href="#">
+                      <span class="left"> <span class="th radius"><img src="./assets/images/gifts/gift-6.png" alt="" title="" /></span> </span>
+                      <span class="media-body"> “New Arrival” </span>
+                    </a>
+                  </li>
+                  <li class="media">
+                    <a href="#">
+                      <span class="left"> <span class="th radius"><img src="./assets/images/gifts/no-gift.jpg" alt="" title="" /></span> </span>
+                      <span class="media-body"> “Custom Message” </span>
+                    </a>
+                  </li>
+                </ul>
+              </section>
+              <!-- Close .block-gift-left -->
+              
+              <!-- Start .block-gift-right -->
+              <section class="block-gift-right">
+                <h5>Ordered Items <a href="#" class="large-right">[Show Details]</a></h5>
+                <div class="block-items">
+                  <span class="empty">No items selected <span>Click Items to Edit</span></span>                  
+                </div>                
+                <hr />
+                
+                <div class="total-info">
+                  <div class="row marg-bottom">
+                    <div class="small-5 columns">
+                      <span class="title">Subtotal</span>
+                    </div>
+                    <div class="small-5 columns">
+                      <span class="value right">$0.00</span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-5 columns">
+                      <span class="title">TOTAL</span>
+                    </div>
+                    <div class="small-5 columns">
+                      <span class="value right">$0.00</span>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                
+                <div class="text-center">
+                  <input type="button" name="checkout" class="button small alert radius" value="Checkout" />
+                </div>
+                
+              </section>
+              
+              <section class="block-gift-right no-border text-center">
+                
+                <h5 class="featured-text text-center">Featured Restaurant</h5>
+                <ul id="featured-restaurant-list" class="testimonials-list">
+                  <li class="active">
+                    <a href="./cuisine.html" class="thumbnail">
+                      <img src="./assets/images/foods/thumbs/food-1.jpg" alt="Chuy’s Steak and Chicken Fajitas 1" title="Chuy’s Steak and Chicken Fajitas 1" />
+                      <span>Chuy’s Steak and Chicken Fajitas</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="./cuisine.html" class="thumbnail">
+                      <img src="./assets/images/foods/thumbs/food-2.jpg" alt="Chuy’s Steak and Chicken Fajitas 2" title="Chuy’s Steak and Chicken Fajitas 2" />
+                      <span>Chuy’s Steak and Chicken Fajitas 2</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="./cuisine.html" class="thumbnail">
+                      <img src="./assets/images/foods/thumbs/food-3.jpg" alt="Chuy’s Steak and Chicken Fajitas 3" title="Chuy’s Steak and Chicken Fajitas 3" />
+                      <span>Chuy’s Steak and Chicken Fajitas 3</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="./cuisine.html" class="thumbnail">
+                      <img src="./assets/images/foods/thumbs/food-4.jpg" alt="Chuy’s Steak and Chicken Fajitas 4" title="Chuy’s Steak and Chicken Fajitas 4" />
+                      <span>Chuy’s Steak and Chicken Fajitas 4</span>
+                    </a>
+                  </li>
+                </ul>
+                
+              </section>
+              <!-- Close .block-gift-right -->
+              
+            </div>
+            <!-- Close .wrapper-gift -->
+            
+          </div> <!-- Close .inner-content -->
+          
+          <hr class="devider" />
+          
+          <!-- BEGIN: Footer Information Block -->
+            <div class="video-thumb show-for-small text-center">
+              <a href="./modals/home-video.html" data-reveal-id="modal-large" data-reveal-ajax="true" class="th">
+                <img src="./assets/images/thumb-video.jpg" alt="Click and play!" title="Click and play!" />
+              </a>
+            </div>
+          
+            <section class="footer-info">
+              <div class="wrapper-top">
+                <ul class="large-block-grid-3 small-block-grid-1">
+                  
+                  <!-- Bussiness Solutions Block -->
+                  <li>
+                    <table>
+                      <tr>
+                        <td width="80"><img src="./assets/images/briefcase.png" alt="Business Solutions" title="Business Solutions" /></td>
+                        <td>
+                          <h5>Business Solutions</h5>
+                          <hr />
+                          <p>Put us to work. Corporate catering for meetings, parties, conferences and more.</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </li>
+                  
+                  <!-- Event Catering Block -->
+                  <li>
+                    <table>
+                      <tr>
+                        <td width="95"><img src="./assets/images/napkin-plate.png" alt="Event Catering" title="Event Catering" /></td>
+                        <td>
+                          <h5>Event Catering</h5>
+                          <hr />
+                          <p>Need to feed a crowd? We make planning easy. Call us today for a FREE estimate!</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </li>
+                  
+                  <!-- Gift Certificates Block -->
+                  <li>
+                    <table>
+                      <tr>
+                        <td width="66"><img src="./assets/images/gift-box.png" alt="Gift Certificates" title="Gift Certificates" /></td>
+                        <td>
+                          <h5>Gift Certificates</h5>
+                          <hr />
+                          <p>People like free food, it’s a fact. Give the gift of food and have it delivered! Treat your friends, family or clients.</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </li>
+                  
+                </ul>
+              </div>
+              <div class="wrapper-bottom">
+                <ul>
+                  
+                  <!-- Left block with Address info. -->
+                  <li class="col-left show-for-medium-up">
+                    <div class="wrapper">
+                      <ul class="vcard">
+                        <li class="fn">Austin</li>
+                        <li class="street-address"><span class="street-address">11673 Jollyville Rd</span>, <span class="state">Austin, TX</span> <span class="zip">78759</span></li>
+                        <li class="tel">Phone: 512-346-9990</li>
+                      </ul>
+                      <ul class="vcard">
+                        <li class="fn">San Antonio</li>
+                        <li class="street-address"><span class="street-address">11230 West Ave.</span>, <span class="state">San Antonio, TX</span> <span class="zip">78213</span></li>
+                        <li>Phone: <span class="tel">210-447-3777</span></li>
+                      </ul>
+                    </div>
+                  </li>
+                  
+                  <li class="devider-left show-for-medium-up"></li>
+                  
+                  <!-- Middle Block with Thumb Video -->
+                  <li class="col-middle show-for-medium-up">
+                    <div class="wrapper video-thumb text-center">
+                      <a href="./modals/home-video.html" data-reveal-id="modal-small" data-reveal-ajax="true" class="th">
+                        <img data-breakpoint data-maxwidth767px="./assets/images/blank.gif" src="./assets/images/thumb-video.jpg" alt="Click and play!" title="Click and play!" />
+                      </a>
+                    </div>
+                  </li>
+                  
+                  <li class="devider-right show-for-medium-up"></li>
+                  
+                  <!-- Right Block with Testimonials -->
+                  <li class="col-right">
+                    <div class="wrapper">
+                      <!-- List Testimonials Block -->
+                      <ul id="testimonials" class="testimonials-list">
+                        <li class="active">
+                          <blockquote>
+                            "Thank you Eat Out In for the outstanding job you did catering our last event. Everything went off without a hitch. Thumbs up!"
+                            <cite>Steve Halford<br /> Samsung Austin</cite>
+                          </blockquote>
+                        </li>
+                        <li>
+                          <blockquote>
+                            "Hated leaving this little heaven on earth, staff were so caring and wonderful."
+                            <cite>Grace<br /> Melbourne</cite>
+                          </blockquote>
+                        </li>
+                        <li>
+                          <blockquote>
+                            "All round awesome and unique experience. Fantastic food, great staff, UNBELIEVABLE fishing! Paradise! See you next time."
+                            <cite>Neil and Lyn Haslop<br /> DarwinSteve Halford</cite>
+                          </blockquote>
+                        </li>
+                        <li>
+                          <blockquote>
+                            "Magical, pure, paradise. Six days wasn’t enough. Magical, pure, paradise. Six days wasn’t enough. Thanks for everything."
+                            <cite>Karen, Richard, Ewan<br /> Sydney, Australia</cite>
+                          </blockquote>
+                        </li>
+                      </ul>
+                    </div>
+                  </li> 
+                                   
+                </ul>
+              </div>
+            </section>
+          <!-- END: Footer Information Block -->
+          
+        </div>
+      </article>
+    <!-- END: #Content -->
+  </div>
+  
+  <!-- BEGIN: #Footer -->
+    <footer id="footer">
+      <!-- Popular Searches -->
+      <section class="popular-searches show-for-medium-up">
+        <ul>
+          <li class="header"><strong>Popular Searches</strong>:</li>
+          <li><a href="#">Chinese Food Delivery Austin</a> &#124; </li>
+          <li><a href="#">Pizza Delivery Austin</a> &#124; </li>
+          <li><a href="#">Mexican Food Delivery Austin</a> &#124; </li>
+          <li><a href="#">Thai Food Delivery Austin</a> &#124; </li>
+          <li><a href="#">Sushi Delivery Austin</a> &#124; </li>
+          <li><a href="#">Indian Food Delivery Austin</a> &#124; </li>
+          <li><a href="#">Breakfast Delivery Austin</a> &#124; </li>
+          <li><a href="#">Italian Delivery Austin</a> &#124; </li>
+          <li><a href="#">BBQ Delivery Austin</a> &#124; </li>
+          <li><a href="#">Greek Delivery Austin</a> &#124; </li>
+          <li><a href="#">Chinese Food Delivery San Antonio</a> &#124; </li>
+          <li><a href="#">Pizza Delivery San Antonio</a> &#124; </li>
+          <li><a href="#">Mexican Food Delivery San Antonio</a> &#124; </li>
+          <li><a href="#">Thai Food Delivery San Antonio</a> &#124; </li>
+          <li><a href="#">Indian Food Delivery San Antonio</a> &#124; </li>
+          <li><a href="#">Breakfast Delivery San Antonio</a> &#124; </li>
+          <li><a href="#">Italian Delivery San Antonio</a> &#124; </li>
+          <li><a href="#">BBQ Delivery San Antonio</a> &#124; </li>
+          <li><a href="#">Greek Delivery San Antonio</a></li>
+        </ul>
+      </section>
+      
+      <!-- Copyright -->
+      <section class="copyright">
+        <div class="row">
+          <div class="links columns large-6">
+            <ul>
+              <li><a href="#">Jobs/Employment</a> &#124; </li>
+              <li><a href="#">Privacy Policy</a> &#124; </li>
+              <li><a href="#">Refund Policy</a> &#124; </li>
+              <li><a href="#">Terms of Use</a></li>
+            </ul>
+          </div>
+          <div class="columns large-6">
+            <p>&copy; Copyright 2013 Eat Out In. All rights reserved.</p>
+          </div>
+        </div>
+        <div id="view-options">
+          <p class="text-center show-for-small">
+            <button id="view-full" class="button medium radius alert">View Full Site</button>
+          </p>
+        </div>
+      </section>
+    </footer>
+  <!-- END: #Footer -->
+  
+  
+  <!-- #Modal-small -->
+  <div id="modal-small" class="reveal-modal small"> </div>
+  
+  <!-- #Modal-medium -->
+  <div id="modal-medium" class="reveal-modal medium"> </div>
+  
+  <!-- #Modal-large -->
+  <div id="modal-large" class="reveal-modal large"> </div>
+  
+  <!-- #Modal-xlarge -->
+  <div id="modal-xlarge" class="reveal-modal xlarge"> </div>
+  
+  <!-- #Modal-expand -->
+  <div id="modal-expand" class="reveal-modal expand"> </div>
+  
+  
+  <!-- Scripts --> 
+  <script src="./assets/js/vendor/jquery.js"></script>
+  
+  <!-- Foundation -->
+  <script src="./assets/js/foundation/foundation.js"></script>  
+  <script src="./assets/js/foundation/foundation.cookie.js"></script> 
+  <script src="./assets/js/foundation/foundation.dropdown.js"></script> 
+  <script src="./assets/js/foundation/foundation.joyride.js"></script>  
+  <script src="./assets/js/foundation/foundation.clearing.js"></script> 
+  <script src="./assets/js/foundation/foundation.interchange.js"></script>  
+  <script src="./assets/js/foundation/foundation.alerts.js"></script> 
+  <script src="./assets/js/foundation/foundation.section.js"></script>  
+  <script src="./assets/js/foundation/foundation.magellan.js"></script> 
+  <script src="./assets/js/foundation/foundation.tooltips.js"></script> 
+  <script src="./assets/js/foundation/foundation.topbar.js"></script> 
+  <script src="./assets/js/foundation/foundation.orbit.js"></script>  
+  <script src="./assets/js/foundation/foundation.placeholder.js"></script>  
+  <script src="./assets/js/foundation/foundation.forms.js"></script>  
+  <script src="./assets/js/foundation/foundation.reveal.js"></script>
+  
+  <script src="./assets/js/vendor/jquery.validate.min.js"></script>
+  <script src="./assets/js/vendor/jquery.fancybox.pack.js"></script>
+  <script src="./assets/js/vendor/jquery.fancybox-media.js"></script>
+  <script src="./assets/js/vendor/breakpoint.js"></script>
+  
+  <script src="./assets/js/script.js"></script>
+  
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <!--script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src='//www.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script-->
+</body>
+</html>

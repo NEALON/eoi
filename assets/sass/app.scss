@@ -389,8 +389,8 @@ a:hover { text-decoration: none; }
 /* Media block */
 
 .media, .media-body { overflow: hidden; zoom: 1; }
-.media { 
-  .left { margin-right: 10px; }
+.media {
+  .left { margin-right: emCalc(10px); }
   h4 { text-align: left; }
 }
 
@@ -867,6 +867,59 @@ a:hover { text-decoration: none; }
 
     .sprites-contact-top { display: block; width: 66px; height: 45px; }
     
+    
+    // Gift Certificates
+    .wrapper-gift { 
+      .block-gift-center {
+        .description { color: $brown-dark; }
+        .gift-form {
+          h3 { color: lighten($brown-dark, 40%); font-size: emCalc(26px); margin-top: emCalc(5px, 26px); }
+          p { font-size: emCalc(13px); line-height: emCalc(15px, 13px); }
+          .row {
+            .title { font-size: emCalc(13px); font-weight: normal; }
+          }
+          fieldset { padding-top: $form-spacing/2; padding-bottom: 0; }
+        }
+      }
+      .block-gift-left { border: 1px solid lighten($brown-dark, 20%); @include border-radius(#{emCalc(5px)}); 
+        h5 { font-weight: bold; }
+        .media {  margin-top: emCalc(9px);
+          a { text-decoration: none;
+            span { display: block; text-decoration: none; } 
+            .media-body { padding-top: emCalc(7px); font-size: emCalc(12px, 14px); font-weight: bold; color: $red-light; }
+            &:hover {
+              span { text-decoration: underline; } 
+            }
+          }
+        }
+      }
+      .block-gift-right { border: 1px solid lighten($brown-dark, 20%); @include border-radius(#{emCalc(5px)}); 
+        h5 { font-weight: bold; 
+          a { font-size: emCalc(12px, 18px); color: $blue; }
+        }
+        .block-items {
+          .empty { font-size: emCalc(13px);
+            span { display: block; font-style: italic; padding-top: emCalc(10px, 13px); }
+          }
+        }        
+        .total-info {
+          .row {
+            .title { font-size: emCalc(14px); font-weight: bold; color: $red-light; }
+            .value { font-size: emCalc(14px); font-weight: bold; }
+          }
+        }
+      }
+        
+      @media #{$small} { @include grid-row($behavior:nest);
+        .block-gift-center { @include grid-column(6, false, false, false, 3); }
+        .block-gift-left { @include grid-column(3, false, false, false, false, 6); margin-top: emCalc(10px); }
+        .block-gift-right { @include grid-column(3); margin-top: emCalc(10px); }
+      }
+      @media #{$middle} {}
+      @media #{$tablet} {}
+    }
+    
+    
     // Business Solutions
     .wrapper-business-solutions { position: relative; z-index: 3;
       @media #{$small} {
@@ -1228,12 +1281,12 @@ label {
 }
 .small { font-size: 70%; }
 .close-reveal-modal { text-decoration: none; }
+.no-marg-bottom { margin-bottom: 0!important; }
 .no-marg-top { margin-top: 0!important; } 
-.no-marg-bottom { margin-bottom: 0!important; } 
 .marg-bottom { margin-bottom: $paragraph-margin-bottom!important; }
 .marg-left { margin-left: emCalc(20px); }
-
-@media #{$small} {
+.no-border { border: 0 none!important; }
+@media #{$small} { 
   .large-right { float: right; }
   .marg-left-large { margin-left: emCalc(20px); }
 }
