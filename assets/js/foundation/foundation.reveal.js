@@ -18,7 +18,14 @@
       dismissModalClass: 'close-reveal-modal',
       bgClass: 'reveal-modal-bg',
       open: function(){},
-      opened: function(){},
+      opened: function(){
+        // Init Validate
+        $('form').each(function() {
+          $(this).validate({
+            errorElement: "small"
+          });
+        });
+      },
       close: function(){},
       closed: function(){},
       bg : $('.reveal-modal-bg'),
