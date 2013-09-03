@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]> <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	
+	<!--========================================  
+    Author: Eugene Tsurcan  
+    Front End Developer  
+    [http://twitter.com/eugenetsurcan]
+  =========================================-->
+	
+  <meta name="viewport" content="width=device-width" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  
+  <title>FAQ - Eat Out In</title>
+  <meta name="description" content="Restaurant Food Delivery." />
+  
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="apple-touch" size="16x16" href="./touch-icon-16x16.png" />
+  <link rel="apple-touch" sizes="32x32" href="./touch-icon-32x32.png" />
+  <link rel="apple-touch" sizes="48x48" href="./touch-icon-48x48.png" />
+  <link rel="apple-touch" sizes="57x57" href="./touch-icon-57x57.png" />
+  <link rel="apple-touch" sizes="72x72" href="./touch-icon-72x72.png" />
+  <link rel="apple-touch" sizes="114x114" href="./touch-icon-114x114.png" />
+  <link rel="apple-touch" sizes="144x144" href="./touch-icon-144x144.png" />  
+  <meta name="msapplication-TileImage" content="./touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#082b52" />  
+  
+  <link rel="stylesheet" href="./assets/css/app.css" />
+  
+  <!--[if IE 8]><script src="./assets/js/vendor/respond.min.js"></script><![endif]-->
+  
+  <script src="./assets/js/vendor/custom.modernizr.js"></script>
+</head>
+<body>  
+  <!--[if lt IE 9]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+  <![endif]-->
+  
+  <!-- BEGIN: #Header -->
+    <header id="header">
+      
+      <!-- Login/Regestration Block (Mobile) -->
+      <section class="auth-block-mobile show-for-small">
+        <div class="description">
+          <p>Restaurant Food Delivery</p>
+        </div>
+        <div class="links">
+          <p><a href="#">Login</a> &#124; <a href="#">Sign up</a></p>
+        </div>
+      </section>
+      
+      <div class="row">     
+        <div class="columns large-8">
+          <a href="./index.html" class="logotype">
+            <img src="./assets/images/logo.png" alt="Eat Out In" title="Eat Out In" />
+          </a>           
+        </div>
+        
+        <div class="columns large-4 text-right show-for-medium-up">
+          <!-- Login/Regestration Block -->
+          <div class="auth-block">
+            <a href="#" class="button alert tiny radius"><i class="icon-signin"></i> Login</a>
+            <a href="#" class="button alert tiny radius">Create Account</a>
+          </div>
+          
+          <!-- Soc list icons -->
+          <div class="soc-list">
+            <ul class="inline-list">
+              <li><a href="#" title="Phone" class="tel icon-soc"><i class="icon-phone"></i></a></li>
+              <li><a href="#" title="Facebook" class="facebook icon-soc"><i class="icon-facebook"></i></a></li>
+              <li><a href="#" title="Twitter" class="twitter icon-soc"><i class="icon-twitter"></i></a></li>
+              <li><a href="#" title="Pinterest" class="pinterest icon-soc"><i class="icon-pinterest"></i></a></li>
+            </ul>
+          </div>
+        </div>        
+      </div>
+      
+      <!-- Search Restaurants Block (Mobile) -->
+      <section class="search-resaurants mobile show-for-small">
+        <form action="" method="post">
+          <div class="row">
+            <div class="columns large-12">
+              <h3 class="upper text-center">Hungry? <small>Search Restaurants</small></h3>
+              <div class="clearfix">
+                <div class="row collapse">
+                  <div class="columns small-10">
+                    <input class="required" type="text" name="search-restaurants" value="" placeholder="Enter your address here" />
+                  </div>
+                  <div class="columns small-2">
+                    <button class="button alert postfix radius">Go!</button>
+                  </div>
+                </div>
+              </div>
+              <p class="text-center small">e.g. "200 East Colfax Ave, Austin, TX 78630"</p>
+            </div>                    
+          </div>
+        </form>                  
+      </section> 
+      
+      <!-- Choose Hotels Block (Mobile) -->
+      <section class="choose-hotels mobile show-for-small">
+        <div class="row">
+          <div class="columns small-12">
+            <h3 class="text-center"><span>At a Hotel?</span> <a href="#" class="button">Order Room Service</a></h3>
+          </div>
+        </div>
+      </section>
+      
+    </header>
+  <!-- END: #Header -->
+  
+  <!-- BEGIN: #Navigation -->
+    <div id="navigation">
+      <div class="contain-to-grid">
+        <nav class="top-bar">
+          <ul class="title-area">
+            <!-- Title Area -->
+            <li class="name">
+              <div class="devider"></div>
+              <div class="toggle-topbar left"><a href="#"><span>Navigation</span> <i class="icon-chevron-down"></i></a></div>
+              <div class="devider"></div>
+              
+              <!-- Soc list icons -->
+              <div class="soc-list right show-for-small">
+                <ul class="inline-list">
+                  <li><a href="#" title="Phone" class="tel icon-soc"><i class="icon-phone"></i></a></li>
+                  <li><a href="#" title="Facebook" class="facebook icon-soc"><i class="icon-facebook"></i></a></li>
+                  <li><a href="#" title="Twitter" class="twitter icon-soc"><i class="icon-twitter"></i></a></li>
+                  <li><a href="#" title="Pinterest" class="pinterest icon-soc"><i class="icon-pinterest"></i></a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        
+          <section class="top-bar-section">
+            <ul class="clearfix">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./restaurants.html">Restaurants</a></li>
+              <li><a href="./business-solutions.html">Business Solutions</a></li>
+              <li><a href="#">Event Catering</a></li>
+              <li><a href="#">Breakfast</a></li>
+              <li class="active"><a href="./faq.html">FAQ</a></li>
+              <li><a href="./contact.html">Contact</a></li>
+            </ul>
+          </section>
+        </nav>
+      </div>
+    </div>
+  <!-- END: #Navigation -->
+  
+  <div class="wrapper-content"> 
+    <!-- BEGIN: #Content -->
+      <article id="content" role="main">
+        <div>
+          
+          <div class="inner-content">
+            <h4>Frequently Asked Questions</h4>
+            <hr />
+            
+            <div class="wrapper-faq-content">
+              <div>
+                
+                <!-- BEGIN: Right Content -->
+                  <div class="right-side">
+                    
+                    <!-- Most Common Questions -->
+                    <section class="most-common-questions">
+                      <h3>Most Common Questions</h3>
+                      <ul>
+                        <li>
+                          <h6>What is your minimum order?</h6>
+                          <p>We have a $10.00 minimum food &amp; beverage order for restaurants within your delivery area &amp; a $100 minimum order for restaurants outside of your delivery area.</p>
+                        </li>
+                        <li>
+                          <h6>Do you sell gift certificates?</h6>
+                          <p>You bet we do! You can purchase certificates in any amount, they are refillable, and you can use them for online or phone orders.</p>
+                        </li>
+                        <li>
+                          <h6>Where can I order from?</h6>
+                          <p>Just about anywhere! We coordinate delivery to homes, offices, hotels, event centers and more...You name the place, Eat Out In will get it there.</p>
+                        </li>
+                        <li>
+                          <h6>Where do you deliver?</h6>
+                          <p>Austin, TX<br /> Cedar Park, TX<br /> Round Rock, TX<br /> Pflugerville, TX<br /> West Lake Hills, TX<br /> San Antonio, TX<br /> Alamo Heights, TX</p>
+                        </li>
+                      </ul>
+                      <div class="sprites-mcq-bottom"> </div>  
+                      <div class="sprites-mcq-left"> </div>                                      
+                    </section>
+                    
+                    <!-- Featured Restaurant -->
+                    <section class="featured-restaurant text-center">
+                      <h5 class="text-center font-arial">Featured Restaurant</h5>
+                      <ul id="featured-restaurant-list" class="testimonials-list">
+                        <li class="active">
+                          <a href="./cuisine.html" class="thumbnail">
+                            <img src="./assets/images/foods/thumbs/food-1.jpg" alt="Chuy’s Steak and Chicken Fajitas 1" title="Chuy’s Steak and Chicken Fajitas 1" />
+                            <span>Chuy’s Steak and Chicken Fajitas</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="./cuisine.html" class="thumbnail">
+                            <img src="./assets/images/foods/thumbs/food-2.jpg" alt="Chuy’s Steak and Chicken Fajitas 2" title="Chuy’s Steak and Chicken Fajitas 2" />
+                            <span>Chuy’s Steak and Chicken Fajitas 2</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="./cuisine.html" class="thumbnail">
+                            <img src="./assets/images/foods/thumbs/food-3.jpg" alt="Chuy’s Steak and Chicken Fajitas 3" title="Chuy’s Steak and Chicken Fajitas 3" />
+                            <span>Chuy’s Steak and Chicken Fajitas 3</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="./cuisine.html" class="thumbnail">
+                            <img src="./assets/images/foods/thumbs/food-4.jpg" alt="Chuy’s Steak and Chicken Fajitas 4" title="Chuy’s Steak and Chicken Fajitas 4" />
+                            <span>Chuy’s Steak and Chicken Fajitas 4</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </section>
+                    
+                    <!-- Did You Know? -->
+                    <section class="did-you-know text-center">
+                      <div>
+                        <h3 class="text-center">Did You Know?</h3>
+                        <ul>
+                          <li>We are locally owned and managed. We support the local community!</li>
+                          <li>We've been in operation for over 27 years!</li>
+                          <li>Eat Out In delivers from over 100 of the best local and national restaurants in Austin and San Antonio!</li>
+                          <li>Eat Out In is a woman owned business!</li>
+                        </ul>
+                      </div>
+                    </section>
+                    
+                  </div>
+                <!-- END: Right Content -->
+                
+                <!-- BEGIN: Left Content -->
+                  <div class="left-side">
+                    <p class="description">So you have a question and you don’t know the answer. Not to worry, we have a page for that…this page. If you can’t find the answer to your question here, feel free to contact us via email or phone by visiting our <a href="#">contact page</a>.</p>
+                    
+                    <!-- FAQ's -->
+                    <div class="wrapper-faqs">
+                      <p class="lead">
+                        Click question below to view the answer.
+                        
+                        <img data-breakpoint data-maxwidth749px="./assets/images/blank.gif" src="./assets/images/faq-people.png" alt="" title="" />
+                      </p>
+                      
+                      <!-- BEGIN: FAQ's accordion -->
+                        <div class="faq-accordion">
+                          <div class="section-container accordion" data-section="accordion">
+                            <section>
+                              <p class="title" data-section-title><a href="#">What is Eat Out In?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>
+                            <section>
+                              <p class="title" data-section-title><a href="#">How do I view the restaurant's menu?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>
+                            <section>
+                              <p class="title" data-section-title><a href="#">How do I place an order?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>                      
+                            <section>
+                              <p class="title" data-section-title><a href="#">How does online ordering work?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>                      
+                            <section>
+                              <p class="title" data-section-title><a href="#">When can I place orders with Eat Out In?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>                      
+                            <section>
+                              <p class="title" data-section-title><a href="#">How long will it take for a delivery order?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>                      
+                            <section>
+                              <p class="title" data-section-title><a href="#">How can I pay?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>                      
+                            <section>
+                              <p class="title" data-section-title><a href="#">How much will it cost?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>
+                            <section>
+                              <p class="title" data-section-title><a href="#">What is Eat Out In?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>
+                            <section>
+                              <p class="title" data-section-title><a href="#">How do I view the restaurant's menu?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>
+                            <section>
+                              <p class="title" data-section-title><a href="#">How do I place an order?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>                      
+                            <section>
+                              <p class="title" data-section-title><a href="#">How does online ordering work?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>                      
+                            <section>
+                              <p class="title" data-section-title><a href="#">When can I place orders with Eat Out In?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>                      
+                            <section>
+                              <p class="title" data-section-title><a href="#">How long will it take for a delivery order?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>                      
+                            <section>
+                              <p class="title" data-section-title><a href="#">How can I pay?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>                      
+                            <section>
+                              <p class="title" data-section-title><a href="#">How much will it cost?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>
+                            <section>
+                              <p class="title" data-section-title><a href="#">What is Eat Out In?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>
+                            <section>
+                              <p class="title" data-section-title><a href="#">How do I view the restaurant's menu?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>
+                            <section>
+                              <p class="title" data-section-title><a href="#">How do I place an order?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>                      
+                            <section>
+                              <p class="title" data-section-title><a href="#">How does online ordering work?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>                      
+                            <section>
+                              <p class="title" data-section-title><a href="#">When can I place orders with Eat Out In?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>                      
+                            <section>
+                              <p class="title" data-section-title><a href="#">How long will it take for a delivery order?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>                      
+                            <section>
+                              <p class="title" data-section-title><a href="#">How can I pay?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>                      
+                            <section>
+                              <p class="title" data-section-title><a href="#">How much will it cost?</a></p>
+                              <div class="content" data-section-content>
+                                <p>Enter your address and click on the delivery or take-out button. Then click on the restaurant and press the red "Place Order" button, this will then display the restaurant's menu. You can browse as many restaurants as you would like and then decide which one you would like to place your order with.</p>
+                              </div>
+                            </section>
+                          </div>
+                        </div>
+                      <!-- END: FAQ's accordion -->
+                                          
+                    </div>
+                  </div>
+                <!-- END: Left Content -->
+                
+              </div>
+            </div>
+          </div> <!-- Close .inner-content -->
+          
+          <hr class="devider" />
+          
+          <!-- BEGIN: Footer Information Block -->
+            <div class="video-thumb show-for-small text-center">
+              <a href="./modals/home-video.html" data-reveal-id="modal-large" data-reveal-ajax="true" class="th">
+                <img src="./assets/images/thumb-video.jpg" alt="Click and play!" title="Click and play!" />
+              </a>
+            </div>
+          
+            <section class="footer-info">
+              <div class="wrapper-top">
+                <ul class="large-block-grid-3 small-block-grid-1">
+                  
+                  <!-- Bussiness Solutions Block -->
+                  <li>
+                    <table>
+                      <tr>
+                        <td width="90"><img src="./assets/images/briefcase.png" alt="Business Solutions" title="Business Solutions" /></td>
+                        <td>
+                          <h5>Business Solutions</h5>
+                          <hr />
+                          <p>Put us to work. Corporate catering for meetings, parties, conferences and more.</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </li>
+                  
+                  <!-- Event Catering Block -->
+                  <li>
+                    <table>
+                      <tr>
+                        <td width="95"><img src="./assets/images/napkin-plate.png" alt="Event Catering" title="Event Catering" /></td>
+                        <td>
+                          <h5>Event Catering</h5>
+                          <hr />
+                          <p>Need to feed a crowd? We make planning easy. Call us today for a FREE estimate!</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </li>
+                  
+                  <!-- Gift Certificates Block -->
+                  <li>
+                    <table>
+                      <tr>
+                        <td width="65"><img src="./assets/images/gift-box.png" alt="Gift Certificates" title="Gift Certificates" /></td>
+                        <td>
+                          <h5>Gift Certificates</h5>
+                          <hr />
+                          <p>People like free food, it’s a fact. Give the gift of food and have it delivered! Treat your friends, family or clients.</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </li>
+                  
+                </ul>
+              </div>
+              <div class="wrapper-bottom">
+                <ul>
+                  
+                  <!-- Left block with Address info. -->
+                  <li class="col-left show-for-medium-up">
+                    <div class="wrapper">
+                      <ul class="vcard">
+                        <li class="fn">Austin</li>
+                        <li class="street-address"><span class="street-address">11673 Jollyville Rd</span>, <span class="state">Austin, TX</span> <span class="zip">78759</span></li>
+                        <li class="tel">Phone: 512-346-9990</li>
+                      </ul>
+                      <ul class="vcard">
+                        <li class="fn">San Antonio</li>
+                        <li class="street-address"><span class="street-address">11230 West Ave.</span>, <span class="state">San Antonio, TX</span> <span class="zip">78213</span></li>
+                        <li>Phone: <span class="tel">210-447-3777</span></li>
+                      </ul>
+                    </div>
+                  </li>
+                  
+                  <li class="devider-left show-for-medium-up"></li>
+                  
+                  <!-- Middle Block with Thumb Video -->
+                  <li class="col-middle show-for-medium-up">
+                    <div class="wrapper video-thumb text-center">
+                      <a href="./modals/home-video.html" data-reveal-id="modal-small" data-reveal-ajax="true" class="th">
+                        <img data-breakpoint data-maxwidth749px="./assets/images/blank.gif" src="./assets/images/thumb-video.jpg" alt="Click and play!" title="Click and play!" />
+                      </a>
+                    </div>
+                  </li>
+                  
+                  <li class="devider-right show-for-medium-up"></li>
+                  
+                  <!-- Right Block with Testimonials -->
+                  <li class="col-right">
+                    <div class="wrapper">
+                      <!-- List Testimonials Block -->
+                      <ul id="testimonials" class="testimonials-list">
+                        <li class="active">
+                          <blockquote>
+                            "Thank you Eat Out In for the outstanding job you did catering our last event. Everything went off without a hitch. Thumbs up!"
+                            <cite>Steve Halford<br /> Samsung Austin</cite>
+                          </blockquote>
+                        </li>
+                        <li>
+                          <blockquote>
+                            "Hated leaving this little heaven on earth, staff were so caring and wonderful."
+                            <cite>Grace<br /> Melbourne</cite>
+                          </blockquote>
+                        </li>
+                        <li>
+                          <blockquote>
+                            "All round awesome and unique experience. Fantastic food, great staff, UNBELIEVABLE fishing! Paradise! See you next time."
+                            <cite>Neil and Lyn Haslop<br /> DarwinSteve Halford</cite>
+                          </blockquote>
+                        </li>
+                        <li>
+                          <blockquote>
+                            "Magical, pure, paradise. Six days wasn’t enough. Magical, pure, paradise. Six days wasn’t enough. Thanks for everything."
+                            <cite>Karen, Richard, Ewan<br /> Sydney, Australia</cite>
+                          </blockquote>
+                        </li>
+                      </ul>
+                    </div>
+                  </li> 
+                                   
+                </ul>
+              </div>
+            </section>
+          <!-- END: Footer Information Block -->
+          
+        </div>
+      </article>
+    <!-- END: #Content -->
+  </div>
+  
+  <!-- BEGIN: #Footer -->
+    <footer id="footer">
+      <!-- Popular Searches -->
+      <section class="popular-searches show-for-medium-up">
+        <ul>
+          <li class="header"><strong>Popular Searches</strong>:</li>
+          <li><a href="#">Chinese Food Delivery Austin</a> &#124; </li>
+          <li><a href="#">Pizza Delivery Austin</a> &#124; </li>
+          <li><a href="#">Mexican Food Delivery Austin</a> &#124; </li>
+          <li><a href="#">Thai Food Delivery Austin</a> &#124; </li>
+          <li><a href="#">Sushi Delivery Austin</a> &#124; </li>
+          <li><a href="#">Indian Food Delivery Austin</a> &#124; </li>
+          <li><a href="#">Breakfast Delivery Austin</a> &#124; </li>
+          <li><a href="#">Italian Delivery Austin</a> &#124; </li>
+          <li><a href="#">BBQ Delivery Austin</a> &#124; </li>
+          <li><a href="#">Greek Delivery Austin</a> &#124; </li>
+          <li><a href="#">Chinese Food Delivery San Antonio</a> &#124; </li>
+          <li><a href="#">Pizza Delivery San Antonio</a> &#124; </li>
+          <li><a href="#">Mexican Food Delivery San Antonio</a> &#124; </li>
+          <li><a href="#">Thai Food Delivery San Antonio</a> &#124; </li>
+          <li><a href="#">Indian Food Delivery San Antonio</a> &#124; </li>
+          <li><a href="#">Breakfast Delivery San Antonio</a> &#124; </li>
+          <li><a href="#">Italian Delivery San Antonio</a> &#124; </li>
+          <li><a href="#">BBQ Delivery San Antonio</a> &#124; </li>
+          <li><a href="#">Greek Delivery San Antonio</a></li>
+        </ul>
+      </section>
+      
+      <!-- Copyright -->
+      <section class="copyright">
+        <div class="row">
+          <div class="links columns large-6">
+            <ul>
+              <li><a href="#">Jobs/Employment</a> &#124; </li>
+              <li><a href="#">Privacy Policy</a> &#124; </li>
+              <li><a href="#">Refund Policy</a> &#124; </li>
+              <li><a href="#">Terms of Use</a></li>
+            </ul>
+          </div>
+          <div class="columns large-6">
+            <p>&copy; Copyright 2013 Eat Out In. All rights reserved.</p>
+          </div>
+        </div>
+        <div id="view-options">
+          <p class="text-center show-for-small">
+            <button id="view-full" class="button medium radius alert">View Full Site</button>
+          </p>
+        </div>
+      </section>
+    </footer>
+  <!-- END: #Footer -->
+  
+  
+  <!-- #Modal-small -->
+  <div id="modal-small" class="reveal-modal small"> </div>
+  
+  <!-- #Modal-medium -->
+  <div id="modal-medium" class="reveal-modal medium"> </div>
+  
+  <!-- #Modal-large -->
+  <div id="modal-large" class="reveal-modal large"> </div>
+  
+  <!-- #Modal-xlarge -->
+  <div id="modal-xlarge" class="reveal-modal xlarge"> </div>
+  
+  <!-- #Modal-expand -->
+  <div id="modal-expand" class="reveal-modal expand"> </div>
+  
+  
+  <!-- Scripts --> 
+  <script src="./assets/js/vendor/jquery.js"></script>
+  
+  <!-- Foundation -->
+  <script src="./assets/js/foundation/foundation.js"></script>	
+	<script src="./assets/js/foundation/foundation.cookie.js"></script>	
+	<script src="./assets/js/foundation/foundation.dropdown.js"></script>	
+	<script src="./assets/js/foundation/foundation.joyride.js"></script>	
+	<script src="./assets/js/foundation/foundation.clearing.js"></script>	
+	<script src="./assets/js/foundation/foundation.interchange.js"></script>	
+	<script src="./assets/js/foundation/foundation.alerts.js"></script>	
+	<script src="./assets/js/foundation/foundation.section.js"></script>	
+	<script src="./assets/js/foundation/foundation.magellan.js"></script>	
+	<script src="./assets/js/foundation/foundation.tooltips.js"></script>	
+	<script src="./assets/js/foundation/foundation.topbar.js"></script>	
+	<script src="./assets/js/foundation/foundation.orbit.js"></script>	
+	<script src="./assets/js/foundation/foundation.placeholder.js"></script>	
+	<script src="./assets/js/foundation/foundation.forms.js"></script>	
+	<script src="./assets/js/foundation/foundation.reveal.js"></script>
+  
+  <script src="./assets/js/vendor/jquery.validate.min.js"></script>
+  <script src="./assets/js/vendor/jquery.fancybox.pack.js"></script>
+  <script src="./assets/js/vendor/jquery.fancybox-media.js"></script>
+  <script src="./assets/js/vendor/breakpoint.js"></script>
+	
+	<script src="./assets/js/script.js"></script>
+  
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <!--script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src='//www.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script-->
+</body>
+</html>
