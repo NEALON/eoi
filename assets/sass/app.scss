@@ -764,6 +764,11 @@ a:hover { text-decoration: none; }
                 
         @media #{$small} { padding-left: 32.6%; font-size: emCalc(14px); }
       }
+      
+      // Featured Restaurant
+      .featured-restaurant { 
+        @media #{$small} { padding-left: 32.6%; margin-top: -78px; }
+      }
     }
     
     // Featured Restaurant
@@ -773,7 +778,6 @@ a:hover { text-decoration: none; }
           span { display: block; padding-top: emCalc(5px, 12px); font-size: emCalc(12px); }
         }
       }
-      @media #{$small} { padding-left: 32.6%; margin-top: -78px; }
     }
     
     // Contact
