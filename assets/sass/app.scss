@@ -397,7 +397,8 @@ a:hover { text-decoration: none; }
     // Inner Content
     .inner-content { min-height: emCalc(300px); font-size: emCalc(15px);       
       @media #{$small} { font-size: emCalc(16px); padding: 0 $column-gutter; }
-    }
+      @media #{$middle} { padding: 0; }
+    } 
     
     h4 { @extend .clearfix;
       > ul { @extend .no-bullet; margin: emCalc(8px, 18px) 0; font-size: emCalc(16px, 24px); 
@@ -776,6 +777,10 @@ a:hover { text-decoration: none; }
         }
       }
       
+      .information-contacts {
+        @media #{$tablet} { font-size:  0.94em; }
+      }
+      
       @media #{$small} {
         > .inner { @include grid-column(9, true); 
           .block-information {
@@ -787,13 +792,9 @@ a:hover { text-decoration: none; }
         }
         .bg-information { background-color: $blue; position: absolute; top: 0; right: #{$column-gutter/2}; width: 27%; height: 100%; }
       }
-      
-      @media #{$tablet} {
-        .information-contacts { font-size:  0.77em; }
-      }
     }
     
-    .wrapper-callcenter { @extend .clearfix; position: relative; z-index: 5; background: $blue; @include border-radius(#{emCalc(10px) emCalc(10px) 0 0}); padding-top: emCalc(10px); 
+    .wrapper-callcenter { @extend .clearfix; position: relative; z-index: 5; background: $blue; @include border-radius(#{emCalc(10px) emCalc(10px) 0 0}); padding: emCalc(10px) #{$column-gutter/2} 0; 
       .row {
         h5 { color: $white; font-weight: bold; font-size: emCalc(16px); line-height: emCalc(17px); }
         p { color: $white; font-size: emCalc(12px); text-align: center; }  
@@ -809,7 +810,8 @@ a:hover { text-decoration: none; }
         > img { position: absolute; bottom: 0; right: 0; z-index: -1; width: 24%; } 
       }
       
-      @media #{$tablet} { font-size: 0.84em; }
+      @media #{$tablet} { font-size: 0.96em; }
+      @media #{$small} { padding: {left: 0; right: 0;} }
     } 
         
     .contact-form { border: 1px solid $red-light;       
@@ -1182,8 +1184,10 @@ label {
 .no-marg-bottom { margin-bottom: 0!important; }
 .marg-bottom { margin-bottom: $paragraph-margin-bottom!important; }
 .marg-left { margin-left: emCalc(20px); }
+
 @media #{$small} {
   .large-right { float: right; }
+  .marg-left-large { margin-left: emCalc(20px); }
 }
   
 

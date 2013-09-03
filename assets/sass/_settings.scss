@@ -91,7 +91,8 @@ $alert-color: #c53a30;
 // Media Queries
 
 $small-screen: 750px;
-$tablet-screen: 850px;
+$tablet-screen: 870px;
+$middle-screen: 970px; 
 // $medium-screen: 1024px;
 // $large-screen: 1440px;
 
@@ -102,7 +103,7 @@ $tablet-screen: 850px;
 // $landscape: "only screen and (orientation: landscape)";
 // $portrait: "only screen and (orientation: portrait)";
 
-
+$middle: "(min-width: #{$small-screen}) and (max-width: #{$middle-screen})";
 $tablet: "(min-width: #{$small-screen}) and (max-width: #{$tablet-screen})";
 
 //// Cursors
