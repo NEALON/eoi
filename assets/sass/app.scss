@@ -812,7 +812,7 @@ a:hover { text-decoration: none; }
         
     .contact-form { border: 1px solid $red-light;       
       h3 { margin: 0; color: $white; background: $red-light; padding: emCalc(10px) #{$column-gutter/2}; font-family: $font-candara; font-size: emCalc(20px); }
-      form { padding-top: emCalc(20px); 
+      form { padding: emCalc(20px) emCalc(10px) 0;
         .row { 
           div {             
             textarea { height: emCalc(100px); }
@@ -823,7 +823,7 @@ a:hover { text-decoration: none; }
             
       @media #{$small} {
         h3 { font-size: emCalc(30px); }
-        form { padding-top: emCalc(40px);
+        form { padding: emCalc(40px) 0 0 0;
           .row {
             div {
               label.large-right, .help-block {
