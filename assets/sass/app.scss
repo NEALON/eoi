@@ -741,25 +741,42 @@ a:hover { text-decoration: none; }
     }
     
     // Contact
-    .wrapper-contact-content { margin-top: emCalc(-20px); 
-      > div { @include grid-row($behavior:nest); }   
-      
-      .left-side { @include grid-column(12); }      
-      .right-side { @include grid-column(12); }
-      
-      .description { margin: emCalc(15px) 0 emCalc(30px); }
-      
-      @media #{$small} { 
-        .left-side { @include grid-column(9, false, false, false, false, 3); }      
-        .right-side { @include grid-column(3, false, false, false, 9); }
-        
-        .description { margin: emCalc(15px) 20% emCalc(30px) 4px; }
-        
-        .block-addresses {
-          ul { list-style: none; }
+    .wrapper-contact-content {
+      .block-information { @extend .clearfix; position: relative; z-index: 3; margin-top: emCalc(-21px); padding-top: emCalc(30px);
+        > div { @include grid-column(9, true); 
+          .information-grid { @include block-grid(4, 0); 
+            > li { padding: 0 0 emCalc(5px) emCalc(23px);
+              &:last-child { width: 50%; }
+              h5 { color: $red; font-weight: bold; }
+              p { color: $brown-dark; font-size: emCalc(14px); }
+            }
+          }
         }
+        .description { @include grid-column(9, true); color: $brown-dark; font-size: emCalc(14px); margin-bottom: emCalc(5px); }
+        .bg-information { background: $blue; position: absolute; top: 0; right: 0; width: 25%; height: 100%; }
+      }
+      
+      .block-callcenter { @extend .clearfix; position: relative; z-index: 5; background: $blue; @include border-radius(#{10px 0 0 0});
+        > .row { @include grid-column(10, true); 
+          h5 { color: $white; font-weight: bold; font-size: emCalc(14px); }
+          p { color: $white; font-size: emCalc(14px); }  
+        }
+        > img { position: absolute; bottom: 0; right: 0; z-index: -1; }
+      }      
+             
+      @media #{$small} {                
+
       }
     }
+        
+    .contact-form {        
+      h3 { border: 1px solid lighten($brown-dark, 40%); border-width: 0 1px; margin: 0; color: $white; background: $red-light; padding: emCalc(10px) #{$column-gutter/2}; font-family: $font-candara; font-size: emCalc(30px); }
+      
+      @media #{$small} {
+        
+      }
+    }
+      
     .sprites-contact-top { display: block; width: 73px; height: 45px; }
       
     
