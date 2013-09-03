@@ -80,10 +80,13 @@ $fontAwesomePath: "../font";
 /* -------------------------------------------------------------------------*/
 /* Base CSS */
 
-html, body { background-color: $white; }
+html, body { background-color: $white; 
+  @media #{$small} { background-color: $body-bg; }
+}
 
-@media #{$small} {
-  html, body { background-color: $body-bg; }
+body { font-size: emCalc(15px);
+  @media #{$small} { font-size: emCalc(16px); }
+  @media #{$tablet} { font-size: emCalc(15px); }
 }
 
 img { 
@@ -321,8 +324,8 @@ a:hover { text-decoration: none; }
     .top-bar-section { font-size: emCalc(13px); }
   }
   
-  @media #{"(max-width: 790px) and (min-width: #{$small-screen})"} {
-    .top-bar-section { font-size: emCalc(12px); }
+  @media #{$tablet} {
+    .top-bar-section { font-size: emCalc(13px, 16px); }
   }
   
   @media #{$medium} {
@@ -390,10 +393,8 @@ a:hover { text-decoration: none; }
     }
     
     // Inner Content
-    .inner-content { min-height: emCalc(300px); }
-    
-    @media #{$small} {
-      .inner-content { padding: 0 $column-gutter; }
+    .inner-content { min-height: emCalc(300px); font-size: emCalc(15px);       
+      @media #{$small} { font-size: emCalc(16px); padding: 0 $column-gutter; }
     }
     
     h4 { @extend .clearfix;
@@ -499,6 +500,10 @@ a:hover { text-decoration: none; }
             }
           }
         }
+      }
+      
+      @media #{$tablet} {
+        > ul > li figure img { width: 90px; }
       }
     }    
     
@@ -651,6 +656,14 @@ a:hover { text-decoration: none; }
         }
       }
       
+      @media #{$tablet} {
+        .right-side > div ul > li:first-child + li { padding-right: 7%; 
+          + li { padding-right: 31%; 
+            + li { padding-right: 51%; }
+          }
+        }
+      }
+      
       @media #{$medium} {
         .right-side > div { 
           h3 { margin-left: 0; }
@@ -785,7 +798,9 @@ a:hover { text-decoration: none; }
           }
         }
         table { border: 0 none; margin-bottom: 0; background: #ccb181; padding: emCalc(6px) emCalc(12px); width: 100%; @include background-image(radial-gradient(60% 50%, $orange-ligth 40%, rgba(255,255,255,0) 100%)); @include box-shadow(#{inset -3px 4px 20px 1px #8d744a});
-          h5 { margin: 0; text-align: left; }
+          h5 { margin: 0; text-align: left; 
+            @media #{$tablet} { font-size: emCalc(14px); }
+          }
           hr { border-color: $grey; margin: emCalc(3px) 0; }
           p { font-size: emCalc(12px); margin-bottom: 0; }
         }
@@ -1036,12 +1051,12 @@ a.thumbnail:hover img, img.thumbnail:hover { border-color: lighten($blue, 20%); 
       }
     }
   }
-}
-
-@media #{$small} { 
-  #footer { text-align: left; padding: {left: emCalc(10px); right: emCalc(10px);}
-    .copyright .links { text-align: right; }
+  
+  @media #{$small} { text-align: left; padding: {left: emCalc(10px); right: emCalc(10px);}
+    .copyright .links { text-align: right; }  
   }
+  
+  @media #{$tablet} { font-size: emCalc(15px); }
 }
 
 
