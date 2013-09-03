@@ -370,7 +370,9 @@ a:hover { text-decoration: none; }
 
 .media, .media-body { overflow: hidden; zoom: 1; }
 .media { 
-  .left { margin-right: 10px; }}
+  .left { margin-right: 10px; }
+  h4 { text-align: left; }
+}
 
 /* -------------------------------------------------------------------------*/
 /* Content page */
@@ -774,7 +776,10 @@ a:hover { text-decoration: none; }
       }
     }
     .sprites-contact-top { display: block; width: 73px; height: 45px; }
-      
+    
+    // Business Solutions
+    .wrapper-business-solutions {}
+    .sprites-business-solutions-top { display: block; width: 47px; height: 47px; }  
     
     // Testimonials
     .testimonials-list { @extend .no-bullet; margin: 0;
