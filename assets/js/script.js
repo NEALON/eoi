@@ -121,6 +121,17 @@ var eoi = eoi || {};
       showMobileOptimized();
     });
     
+        
+    $('[data-active]').click(function(){      
+      if($(this).data('active-for').length) {
+        if($(this).hasClass('active')) { $($(this).data('active-for')).removeClass('active'); }
+        else { $($(this).data('active-for')).addClass('active'); }
+      }
+      if($(this).hasClass('active')) { $(this).removeClass('active'); }
+      else { $(this).addClass('active'); }
+      return false;
+    })
+    
   };
   
   
