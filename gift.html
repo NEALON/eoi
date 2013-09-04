@@ -170,28 +170,30 @@
                 <form class="gift-form">
                   <div class="row">
                     <div class="small-12 large-5 columns">
-                      <span class="th radius">
-                        <img src="./assets/images/gift.jpg" alt="" title="" />
-                      </span>
+                      <div class="wrapper-img">
+                        <span class="th radius">
+                          <img src="./assets/images/gift.jpg" alt="" title="" />
+                        </span>
+                      </div>
                     </div>
                     <div class="small-12 large-7 columns">
                       <h3>Custom Message</h3>
                       <p>Select the date you would like to email your gift and enter the amount and name and email address of the recipient. Enter a personalized message if you would like, and then add it to the cart.</p>
                       
                       <div class="row">
-                        <div class="small-12 large-8 columns">
-                          <label for="emailed_date" class="large-right title inline">Your gift will be emailed on:</label>
+                        <div class="small-12 large-7 columns">
+                          <label for="emailed_date" class="left title inline">Gift will be emailed on:</label>
                         </div>
-                        <div class="small-12 large-4 end columns">
+                        <div class="small-12 large-5 end columns">
                           <input type="text" id="emailed_date" name="emailed_date">
                         </div>
                       </div>
                       
                       <div class="row">
-                        <div class="small-12 large-8 columns">
-                          <label for="amount" class="large-right title inline">Enter the amount your gift:</label>
+                        <div class="small-12 large-7 columns">
+                          <label for="amount" class="left title inline">Enter the amount gift:</label>
                         </div>
-                        <div class="small-12 large-4 end columns">
+                        <div class="small-12 large-5 end columns">
                           <input type="text" id="amount" name="amount">
                         </div>
                       </div>
@@ -245,7 +247,7 @@
                     <textarea id="your-message"></textarea>
                   </div>
                   
-                  <div>
+                  <div class="wrapper-submit">
                     <input type="submit" name="submit" class="button alert radius" value="Add to Cart" />
                   </div>
                 </form>
@@ -304,39 +306,74 @@
               
               <!-- Start .block-gift-right -->
               <section class="block-gift-right">
-                <h5>Ordered Items <a href="#" class="large-right">[Show Details]</a></h5>
-                <div class="block-items">
-                  <span class="empty">No items selected <span>Click Items to Edit</span></span>                  
-                </div>                
-                <hr />
                 
-                <div class="total-info">
-                  <div class="row marg-bottom">
-                    <div class="small-5 columns">
-                      <span class="title">Subtotal</span>
+                <div class="wrapper-ordered-items">
+                  <h5 class="left">Ordered Items</h5>
+                  <a href="#" class="details-btn" data-active data-active-for='.details'><span class="show-text">[Show Details]</span><span class="hide-text">[Hide Details]</span></a>
+                  <div class="block-items">
+                    <span class="empty marg-bottom" style="display: none;">No items selected </span>
+                    <ul class="items no-bullet">
+                      <li class="row">
+                        <div class="small-10 columns"><a href="#" class="title">$40,00 Email  Gift Certificate</a>
+                          <ul class="no-bullet details">
+                            <li>- Just Because</li>
+                            <li>- to: sdf</li>
+                            <li>- #1364892536</li>
+                          </ul>
+                        </div>
+                        <div class="small-2 right columns"><a href="#"><i class="icon-remove"></i></a></div>
+                      </li>
+                      <li class="row">
+                        <div class="small-10 columns"><a href="#" class="title">$25,00 Email  Gift Certificate</a>                        
+                          <ul class="no-bullet details">
+                            <li>- Just Because</li>
+                            <li>- to: sdfsdfdsfsdf</li>
+                            <li>- #1364906735</li>
+                          </ul>
+                        </div>
+                        <div class="small-2 right columns"><a href="#"><i class="icon-remove"></i></a></div>
+                      </li>
+                      <li class="row">
+                        <div class="small-10 columns"><a href="#" class="title">$250,00 Email  Gift Certificate</a>                        
+                          <ul class="no-bullet details">
+                            <li>- Congratulations</li>
+                            <li>- to: sdfsdfdsfsdf</li>
+                            <li>- #1364906762</li>
+                          </ul>                        
+                        </div>
+                        <div class="small-2 right columns"><a href="#"><i class="icon-remove"></i></a></div>
+                      </li>
+                      
+                    </ul>      
+                    <span class="to-edit">Click Items to Edit</span>            
+                  </div>                
+                  <hr />
+                  
+                  <div class="total-info">
+                    <div class="row marg-bottom">
+                      <div class="small-5 columns">
+                        <span class="title">Subtotal</span>
+                      </div>
+                      <div class="small-5 columns">
+                        <span class="value right">$0.00</span>
+                      </div>
                     </div>
-                    <div class="small-5 columns">
-                      <span class="value right">$0.00</span>
+                    <div class="row">
+                      <div class="small-5 columns">
+                        <span class="title">TOTAL</span>
+                      </div>
+                      <div class="small-5 columns">
+                        <span class="value right">$0.00</span>
+                      </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="small-5 columns">
-                      <span class="title">TOTAL</span>
-                    </div>
-                    <div class="small-5 columns">
-                      <span class="value right">$0.00</span>
-                    </div>
+                  <hr />
+                  
+                  <div class="text-center">
+                    <input type="button" name="checkout" class="button alert radius" value="Checkout" />
                   </div>
                 </div>
-                <hr />
                 
-                <div class="text-center">
-                  <input type="button" name="checkout" class="button alert radius" value="Checkout" />
-                </div>
-                
-              </section>
-              
-              <section class="block-gift-right no-border text-center">
                 <div class="featured-restaurant text-center">
                   <h5 class="featured-text text-center">Featured Restaurant</h5>
                   <ul id="featured-restaurant-list" class="testimonials-list">
@@ -366,7 +403,8 @@
                     </li>
                   </ul>
                 </div>
-              </section>
+                
+              </section>              
               <!-- Close .block-gift-right -->
               
             </div>
