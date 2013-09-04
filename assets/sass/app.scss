@@ -967,8 +967,8 @@ a:hover { text-decoration: none; }
       @media #{$small} {
         .panel-red-bg { @include box-shadow(#{inset -10px 7px 10px -10px lighten($black, 20%)}); background: image-url("red-left-bg.gif") 0 0 repeat-y $red-light; height: 100%; width: 31.5%; position: absolute; top: 0; right: $column-gutter / 2; z-index: -1; }
       }
-      .panel-red { @include box-shadow(#{inset 0 10px 10px -10px lighten($black, 20%), inset 0 -10px 10px -10px lighten($black, 20%)}); margin: emCalc(10px) #{-$column-gutter / 2} 0; padding: emCalc(25px) $column-gutter / 2; background: $red-light; 
-        @media #{$small} { background: none transparent; padding: emCalc(25px) 11%; margin: 0; @include box-shadow(#{none}); }
+      .panel-red { margin: 0 #{-$column-gutter / 2} 0; padding: 0 $column-gutter / 2 emCalc(25px); 
+        @media #{$small} { padding: emCalc(25px) 11%; margin: 0; }
       }
     }
     .sprites-business-solutions-top { display: block; width: 47px; height: 47px; } 
@@ -983,25 +983,27 @@ a:hover { text-decoration: none; }
       }
       .active a img { @include box-shadow(#{0 0 6px 2px $blue}); }
     }
-    .wrapper-service-content { overflow: hidden; padding: emCalc(15px) 0 0; margin: 0 #{-$column-gutter / 2} 0; background: $blue; position: relative; z-index: 3;   
-      .right-side { text-align: center; padding: 0 $column-gutter;
+    .wrapper-service-content { overflow: hidden; margin: 0 #{-$column-gutter / 2} emCalc(20px); background: $blue; position: relative; z-index: 3;   
+      .right-side { text-align: center; padding: emCalc(15px) $column-gutter 0;
         h1, h2, h3, h4, h5, h6 { color: $white; }
         .action { margin: emCalc(30px) 0 emCalc(10px); }
         
-        @media #{$small} { @include grid-column(4, false, false, false, 8); padding: {left: 0; right: 0;} }
+        @media #{$small} { @include grid-column(4); padding: {left: 0; right: 0; top: 0;} }
       }
       
-      .left-side { @extend .clearfix; background: $white; border-top: emCalc(6px) solid $orange;
-        > div { text-align: center; padding: emCalc(20px) $column-gutter;
+      .left-side { @extend .clearfix; background: $white; border-bottom: emCalc(6px) solid $orange;
+        > section { text-align: center; padding: emCalc(20px) $column-gutter!important; display: none;
           h1, h2, h3, h4, h5, h6 { text-align: center; }
+          h4 { line-height: 1.0; }
+          &.active { display: block; }
         }
       } 
       
-      @media #{$small} { padding: {left: emCalc(20px); right: emCalc(20px);} margin: 0 0 emCalc(20px);
-        .left-side { @include grid-column(8, false, false, false, false, 4); background: none transparent; border-top: 0 none;
-          > div { padding: 40px 21% 0; }
+      @media #{$small} { padding: {left: emCalc(20px); right: emCalc(20px);} margin: {left: 0; right: 0;};
+        .left-side { @include grid-column(8); background: none transparent; border-bottom: 0 none;
+          > section { padding: 60px 21% 0!important; }
         } 
-        .circle-bg { position: absolute; top: 7%; left: 5.5%; width: 57%; z-index: -1; background: $white; height: 190%; @include border-radius(#{100%}); border: emCalc(6px) solid $orange; border-bottom-width: 0; }
+        .circle-bg { position: absolute; top: 7%; left: 3.3%; width: 60%; z-index: -1; background: $white; height: 190%; @include border-radius(#{100%}); border: emCalc(6px) solid $orange; border-bottom-width: 0; }
       }
     } 
     
