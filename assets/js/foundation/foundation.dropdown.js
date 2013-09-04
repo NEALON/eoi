@@ -162,7 +162,7 @@
     },
 
     small : function () {
-      return $(window).width() < 768 || $('html').hasClass('lt-ie9');
+      return $(window).width() < 750 || $('html').hasClass('lt-ie9');
     },
 
     off: function () {

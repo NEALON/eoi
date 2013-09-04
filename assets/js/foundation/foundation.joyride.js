@@ -336,10 +336,10 @@
 
     is_phone : function () {
       if (Modernizr) {
-        return Modernizr.mq('only screen and (max-width: 767px)') || $('.lt-ie9').length > 0;
+        return Modernizr.mq('only screen and (max-width: 749px)') || $('.lt-ie9').length > 0;
       }
 
-      return (this.settings.$window.width() < 767);
+      return (this.settings.$window.width() < 749);
     },
 
     hide : function () {
