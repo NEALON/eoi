@@ -55,7 +55,14 @@ var eoi = eoi || {};
     
     // Init Featured Restaurants
     eoi.testimonials({
-      wrapper: '#featured-restaurant-list'
+      wrapper: '#featured-restaurant-list',
+      delay: 4700
+    });
+    
+    // Init Testimonials on Business Solutions page
+    eoi.testimonials({
+      wrapper: '#testimonials-bs',
+      delay: 4300
     });
     
     // Init Validate
@@ -114,16 +121,18 @@ var eoi = eoi || {};
       showMobileOptimized();
     });
     
-        
-    $('[data-active]').click(function(){      
-      if($(this).data('active-for').length) {
+    // Hide / Show buttons    
+    $('[data-active]').click(function(e) {  
+      e.preventDefault();
+          
+      if($(this).data('active-for')) {
         if($(this).hasClass('active')) { $($(this).data('active-for')).removeClass('active'); }
         else { $($(this).data('active-for')).addClass('active'); }
       }
+      
       if($(this).hasClass('active')) { $(this).removeClass('active'); }
       else { $(this).addClass('active'); }
-      return false;
-    })
+    });
     
   };
   
@@ -256,6 +265,11 @@ var eoi = eoi || {};
     
     // Restaurant Logos Init
     eoi.restaurantLogos();
+    
+    // Companies Logos Init
+    eoi.restaurantLogos({
+      wrapper: "#companies-logos"
+    });
     
   });
   
