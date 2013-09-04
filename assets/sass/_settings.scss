@@ -177,7 +177,8 @@ $small-font-color: $body-font-color;
 
 // $paragraph-font-family: inherit;
 // $paragraph-font-weight: normal;
-$paragraph-font-size: emCalc(14px);
+$paragraph-font-size-px: 14px;
+$paragraph-font-size: emCalc($paragraph-font-size-px);
 // $paragraph-line-height: 1.6;
 $paragraph-margin-bottom: emCalc(15px);
 // $paragraph-aside-font-size: emCalc(14px);

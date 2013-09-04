@@ -138,7 +138,7 @@
 
       objPos(tip, (target.offset().top + this.outerHeight(target) + 10), 'auto', 'auto', target.offset().left, width);
 
-      if ($(window).width() < 767) {
+      if ($(window).width() < 749) {
         objPos(tip, (target.offset().top + this.outerHeight(target) + 10), 'auto', 'auto', 12.5, $(this.scope).width());
         tip.addClass('tip-override');
         objPos(nub, -nubHeight, 'auto', 'auto', target.offset().left);
