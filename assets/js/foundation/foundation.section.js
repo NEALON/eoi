@@ -10,7 +10,7 @@
 
     settings : {
       deep_linking: false,
-      small_breakpoint: 768,
+      small_breakpoint: 750,
       one_up: true,
       section_selector : '[data-section]',
       region_selector : 'section, .section, [data-section-region]',

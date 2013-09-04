@@ -15,7 +15,7 @@
 
       named_queries : {
         'default' : 'only screen and (min-width: 1px)',
-        small : 'only screen and (min-width: 768px)',
+        small : 'only screen and (min-width: 750px)',
         medium : 'only screen and (min-width: 1280px)',
         large : 'only screen and (min-width: 1440px)',
         landscape : 'only screen and (orientation: landscape)',

@@ -9,7 +9,7 @@
 // ---------------------------------------------------------------------------
 // Variables
  
-// Colours
+// Colours 
 $white          :#ffffff; 
 $black          :#000000;
 
@@ -281,6 +281,10 @@ a:hover { text-decoration: none; }
 
 .sprites-icon-tell-friend { display: block; height: 28px; width: 40px; }
 .sprites-icon-email { display: block; height: 32px; width: 33px; }
+.sprites-business-solutions-top { display: block; width: 47px; height: 47px; }
+.sprites-contact-top { display: block; width: 66px; height: 45px; }
+.sprites-event-catering-top { display: block; height: 45px; width: 56px; }
+.sprites-chef { display: block; height: 65px; width: 77px; }
 
 
 /* -------------------------------------------------------------------------*/
@@ -867,10 +871,7 @@ a:hover { text-decoration: none; }
       @media #{$tablet} {
         h3 { font-size: emCalc(25px); }
       }
-    }
-
-    .sprites-contact-top { display: block; width: 66px; height: 45px; }
-    
+    }    
     
     // Gift Certificates
     .wrapper-gift { 
@@ -970,8 +971,7 @@ a:hover { text-decoration: none; }
       .panel-red { margin: 0 #{-$column-gutter / 2} 0; padding: 0 $column-gutter / 2 emCalc(25px); 
         @media #{$small} { padding: emCalc(25px) 11%; margin: 0; }
       }
-    }
-    .sprites-business-solutions-top { display: block; width: 47px; height: 47px; } 
+    }    
     .list-services {
       a { display: block; color: $brown-dark; text: {decoration: none; transform: uppercase;} text-align: center;
         img { border: 4px solid $orange; @include border-radius(#{emCalc(15px)}); @include inline-block; @include transition(#{all .3s}); }
@@ -1148,14 +1148,14 @@ a.thumbnail:hover img, img.thumbnail:hover { border-color: lighten($blue, 20%); 
   .th { border: 0 none; @include opacity(.9); @include transition(#{all .5s}); 
     &:hover { @include opacity(1); } 
   }
-}
+} 
 
 // Search Restaurants
 .search-resaurants { text-align: center; @include panel($blue, #{5px 10px 0 10px}, true); @include border-radius($global-radius); @include inset-shadow($active:false); background: {image: image-url("hungry-bg.png"); position: left bottom; repeat: no-repeat;}
   h2 { margin: 0; }
   h1, h2, h3, h4, h5 { color: $white; }
   h6 { color: $brown-dark; }
-  p { margin: {bottom: emCalc(10px); top: emCalc(-15px);} clear: both; }
+  p { margin: {bottom: emCalc(10px, $paragraph-font-size-px); top: emCalc(-11px, $paragraph-font-size-px);} clear: both; }
   .button { margin-bottom: emCalc(17px, 19px);
     > span { display: none; }
   }  
@@ -1198,7 +1198,12 @@ a.thumbnail:hover img, img.thumbnail:hover { border-color: lighten($blue, 20%); 
 .section-container, .section-container.auto { border: 1px solid $section-border-color; border-bottom: 0 none; }
 
 // Orbit slider
-.slideshow-wrapper { margin: {bottom: emCalc(15px); left: #{-$column-gutter / 2}; right: #{-$column-gutter / 2}} }
+.slideshow-wrapper { margin: {bottom: emCalc(15px); left: #{-$column-gutter / 2}; right: #{-$column-gutter / 2}} 
+  .orbit-container .orbit-slides-container { text-align: center;
+    img { @include inline-block; }
+    li .orbit-caption { text-align: left; }
+  }
+}
 
 @media #{$small} {
   .slideshow-wrapper { margin: {left: 0; right: 0;} }
