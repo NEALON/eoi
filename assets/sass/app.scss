@@ -976,6 +976,11 @@ a:hover { text-decoration: none; }
     
     // Footer Information
     .footer-info { margin-top: emCalc(55px);
+      .testimonials-list {
+        blockquote { color: $white; font: {style: normal; size: emCalc(14px);}
+          cite { padding-left: emCalc(16px); color: $white; font-style: italic; }
+        }
+      }
       .wrapper-top { background: image-url("blue-top-bg.gif") 0 0 repeat-x $blue; margin: {top: emCalc(30px); left: #{-$column-gutter / 2}; right: #{-$column-gutter / 2}}; padding: {left: #{$column-gutter / 2}; right: #{$column-gutter / 2}}
         > ul { font-size: 1em; @extend .no-bullet;
           > li:first-child { margin-top: emCalc(-30px); }
@@ -1020,11 +1025,7 @@ a:hover { text-decoration: none; }
         
         .wrapper { margin: emCalc(10px) emCalc(30px);
           // List Testimonials 
-          .testimonials-list { @extend .no-bullet; margin: 0; font-size: 1em;
-            blockquote { border: 0 none; padding: 0; font-size: emCalc(14px); line-height: 1.2; color: $white; margin: 0;
-              cite { color: $white; padding: emCalc(12px) 0 0 emCalc(16px); font-style: italic; font-size: 1em; }
-            }
-          }          
+          .testimonials-list { @extend .no-bullet; margin: 0; font-size: 1em; }          
           
           .vcard + .vcard { margin-bottom: 0; }
         }
@@ -1037,8 +1038,8 @@ a:hover { text-decoration: none; }
       }
     }
     
-    // Restaurant Logos
-    .restourant-logos { margin-top: emCalc(12px);
+    // Restaurant Logos and Companies Logos
+    .restourant-logos, .wrapper-companies-logos { margin-top: emCalc(12px);
       ul { @extend .no-bullet; font-size: 1em; 
         ul { margin-left: 0; }
       }
@@ -1059,10 +1060,13 @@ a:hover { text-decoration: none; }
             }
           }
         }
-        
-        @media #{$small} {
-          > li { @include grid-column(3); }
-        }
+      }
+    }
+    
+    // Companies Logos
+    .wrapper-companies-logos { margin-top: 0; 
+      > ul > li > ul > li .wrapper-img { padding: 0; border: 0 none; line-height: emCalc(82px); height: emCalc(82px); 
+        img { max-width: 100%; margin: 0; }
       }
     }
   }
@@ -1205,6 +1209,11 @@ a.thumbnail:hover img, img.thumbnail:hover { border-color: lighten($blue, 20%); 
   }
 }
 
+// Blockquote
+blockquote { color: $brown-dark; border: 0 none; padding: 0; font: {size: 13px; style: italic;} line-height: 1.2; margin: 0;
+  cite { color: $brown-dark; padding: emCalc(12px) 0 0 0; font: {style: normal; size: 1em;} }
+}
+ 
 // Vcard 
 .vcard { font-size: 1em; line-height: 1.2;
   li { font-size: emCalc(14px); }

@@ -55,7 +55,14 @@ var eoi = eoi || {};
     
     // Init Featured Restaurants
     eoi.testimonials({
-      wrapper: '#featured-restaurant-list'
+      wrapper: '#featured-restaurant-list',
+      delay: 4700
+    });
+    
+    // Init Testimonials on Business Solutions page
+    eoi.testimonials({
+      wrapper: '#testimonials-bs',
+      delay: 4300
     });
     
     // Init Validate
@@ -245,6 +252,11 @@ var eoi = eoi || {};
     
     // Restaurant Logos Init
     eoi.restaurantLogos();
+    
+    // Companies Logos Init
+    eoi.restaurantLogos({
+      wrapper: "#companies-logos"
+    });
     
   });
   
