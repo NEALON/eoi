@@ -909,7 +909,7 @@ a:hover { text-decoration: none; }
               .show-text { display: none; }
               .hide-text { display: block; }
             }
-            &:hover { color: darken($blue, 10%); @include transition(#{color .3s}); }
+            &:hover { color: darken($blue, 10%); }
           }
           
           hr { border-color: lighten($brown-dark, 20%); margin-left: emCalc(-10px); margin-right: emCalc(-10px); }
@@ -995,15 +995,17 @@ a:hover { text-decoration: none; }
       p { text-align: center;
         &.phone { font-family: $font-candara; font-size: emCalc(26px, 14px); }
       }
-      .block-ready-to-work { @include box-shadow(#{inset -10px 7px 10px -10px lighten($black, 20%)}); margin: 0; color: $white; background: image-url("red-bottom-bg.gif") left bottom repeat-x $red-light; padding-top: emCalc(5px); padding-bottom: emCalc(20px); 
-        h3 {  color: $white; }
+      .block-ready-to-work { @include box-shadow(#{inset 0 10px 10px -10px lighten($black, 20%)}); margin: 0; color: $white; background: image-url("red-bottom-bg.gif") left bottom repeat-x $red-light; padding-top: emCalc(5px); padding-bottom: emCalc(20px); margin: { left: #{-$column-gutter/2}; right: #{-$column-gutter/2} }; padding: { left: #{$column-gutter/2}; right: #{$column-gutter/2} };
+        h3 { color: $white; }
+        p { text-align: center; }
       }
       
       @media #{$small} {
         h5 { font-size: emCalc(16px); }
         p { text-align: left; }
-        .block-ready-to-work { margin-top: emCalc(-20px); padding-top: emCalc(20px);
+        .block-ready-to-work { margin-top: emCalc(-20px); padding-top: emCalc(20px); margin: { left: 0; right: 0 }; padding: { left: 0; right: 0 };
           h3 { margin-top: 0; }
+          p { text-align: center; }
         }
         
       }
@@ -1011,6 +1013,43 @@ a:hover { text-decoration: none; }
       @media #{$tablet} {}
     }
     
+    // Featured Video
+    .wrapper-featured-video {
+      /*
+      .wrapper-video { position: relative; padding-bottom: 56.25%; padding-top: 25px; height: 0; 
+        iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+      }*/
+      .block-information {
+        p { line-height: emCalc(19px, 14px); }
+      }
+      .block-more { @include box-shadow(#{inset -6px -6px 40px 10px darken($blue, 10%)}); @include border-radius(emCalc(10px) emCalc(10px) emCalc(5px) emCalc(10px) ); background-color: $blue; padding: emCalc(20px) emCalc(30px) emCalc(5px);
+        h3 { color: $white; }
+        img { margin: 0 auto; @include transition(#{all .3s}); width: 60%; max-width: emCalc(190px);
+          &:hover { @include scale(1.1); }
+        }
+      }
+            
+      @media #{$small} {
+        .block-information {
+          h3 { margin-top: 0; font-size: emCalc(24px); margin-bottom: emCalc(12px, 24px); }
+        }
+        .block-more {
+          h3 { margin-top: 0; font-size: emCalc(30px); margin-bottom: emCalc(12px, 30px); }
+        }
+      }
+      @media #{$middle} {
+        .block-information, .block-more {
+          h3 { margin-bottom: emCalc(7px, 24px); }
+        }
+      }
+      @media #{$tablet} {
+        .block-information, .block-more {
+          h3 { margin-bottom: emCalc(5px, 24px); }
+          p { font-size: emCalc(12px, 15px); }
+        }
+        .block-more { padding: emCalc(20px) emCalc(15px) emCalc(5px); }
+      }
+    }
     
     // Business Solutions
     .wrapper-business-solutions { position: relative; z-index: 3;
