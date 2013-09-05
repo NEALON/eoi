@@ -988,6 +988,30 @@ a:hover { text-decoration: none; }
       @media #{$tablet} { }
     }
     
+    
+    // Job Opportunities
+    .wrapper-job-opportunities {
+      h5 { font-family: $font-arial; }
+      p { text-align: center;
+        &.phone { font-family: $font-candara; font-size: emCalc(26px, 14px); }
+      }
+      .block-ready-to-work { @include box-shadow(#{inset -10px 7px 10px -10px lighten($black, 20%)}); margin: 0; color: $white; background: image-url("red-bottom-bg.gif") left bottom repeat-x $red-light; padding-top: emCalc(5px); padding-bottom: emCalc(20px); 
+        h3 {  color: $white; }
+      }
+      
+      @media #{$small} {
+        h5 { font-size: emCalc(16px); }
+        p { text-align: left; }
+        .block-ready-to-work { margin-top: emCalc(-20px); padding-top: emCalc(20px);
+          h3 { margin-top: 0; }
+        }
+        
+      }
+      @media #{$middle} {}
+      @media #{$tablet} {}
+    }
+    
+    
     // Business Solutions
     .wrapper-business-solutions { position: relative; z-index: 3;
       @media #{$small} {
