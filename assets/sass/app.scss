@@ -128,6 +128,10 @@ h4 { font-size: $h4-font-size - emCalc(1px); }
 h3, h4, h5 { font-weight: normal; }
 h6 { font-family: $font-arial; }
 
+.h-line { position: relative; z-index: 3;
+  &:after { content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; margin-top: -1px; }
+}
+
 .reveal-modal {
   .lead { text-align: left; }
   h2 { font-size: $h2-font-size - emCalc(12px); 
@@ -1097,10 +1101,26 @@ a:hover { text-decoration: none; }
     
     // Event Catering    
     // News slider
-    .wrapper-news-slider { background: $orange;
+    .wrapper-news-slider { background: $orange; margin-bottom: emCalc(10px);
       .orbit-container { background: none transparent;
-        .orbit-slides-container > * .orbit-caption { position: static; background: none transparent; padding: 0; width: auto; display: block; color: $brown-dark; max-width: none; margin: 0; font-size: 1em; }
-        .orbit-slides-container img { border: emCalc(3px) solid $white; margin: emCalc(31px) 0 emCalc(28px) emCalc(33px); }
+        .orbit-slides-container { 
+          > * { position: relative; z-index: 3; @include transition(#{all .5s}); @include opacity(0); @include scale(.8);
+            .bg-blue { background: $blue; position: absolute; top: 0; right: 0; height: 200%; width: 38.3%; z-index: -1; }
+            .orbit-caption { position: static; background: none transparent; padding: 0; width: auto; display: block; color: $brown-dark; max-width: none; margin: 0 0 emCalc(128px) 0; font-size: 1em; 
+              h3 { margin: 0 0 emCalc(25px, 28px) -33%; padding: emCalc(25px, 28px) emCalc(20px, 28px) emCalc(15px, 28px) 33%; background: $red-light; }
+              h3 > *, > div { @include transition(#{all 1s ease .5s}); @include opacity(0); }
+            } 
+            
+            &.active { @include transition(#{all 1s}); @include opacity(1); @include scale(1); 
+              .orbit-caption { 
+                h3 > *, > div { @include opacity(1); }
+              }
+            }
+          }
+          .wrapper-img { position: relative; z-index: 3; padding: emCalc(31px) 6.2% emCalc(28px) 5.7%;
+            img { border: emCalc(3px) solid $white; @include box-shadow(#{emCalc(5px) emCalc(-5px) emCalc(20px) emCalc(-4px) lighten($black, 20%)}); }
+          }
+        }
       }
     }
     
@@ -1244,8 +1264,13 @@ a.thumbnail:hover img, img.thumbnail:hover { border-color: lighten($blue, 20%); 
 
 // Video thumb
 .video-thumb { margin: emCalc(15px) 0;
-  .th { border: 0 none; @include opacity(.9); @include transition(#{all .5s}); 
+  .th { border: 0 none; padding: 0; @include opacity(.9); @include transition(#{all .5s}); 
     &:hover { @include opacity(1); } 
+  }
+  
+  &.overlay { @include transition(#{box-shadow .3s}); position: relative; z-index: 5; margin-top: emCalc(-95px); @include box-shadow(#{0 emCalc(-3px) emCalc(15px) emCalc(-2px) lighten($black, 20%)}); 
+    .th { @include opacity(1); }
+    &:hover { @include box-shadow(#{none}); }
   }
 } 
 
@@ -1446,12 +1471,14 @@ label {
 .no-marg-top { margin-top: 0!important; } 
 .marg-bottom { margin-bottom: $paragraph-margin-bottom!important; }
 .marg-left { margin-left: emCalc(20px); }
+.marg-right { margin-right: emCalc(20px); }
 
 .no-border { border: 0 none!important; }
 
 @media #{$small} { 
   .large-right { float: right; }
   .marg-left-large { margin-left: emCalc(20px); }
+  .marg-right-large { margin-right: emCalc(20px); }
 }
 
 .nowrap { white-space: nowrap; }
