@@ -1083,6 +1083,7 @@ a:hover { text-decoration: none; }
         } 
         .wrapper-breakfast-middle { margin: 0 0 emCalc(40px) 0;
           .breakfast-middle { @include grid-column(4, false, false, false, 2); 
+            p { text-align: center; }
             .arrow-bg { position: relative; top: 100%; left: 50%;
               &:before { content: ""; position: absolute; top: 0; left: 0; width: emCalc(22px); margin-left: emCalc(-11px); height: emCalc(16px); background-color: $red-light; }
               &:after {  content: ""; position: absolute; top: emCalc(16px); left: emCalc(-30px); width: 0; height: 0; border-left: emCalc(30px) solid transparent; border-right: emCalc(30px) solid transparent; border-top: emCalc(20px) solid $red-light; }
