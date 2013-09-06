@@ -831,9 +831,7 @@ a:hover { text-decoration: none; }
          
       @media #{$small} { @include border-radius(#{emCalc(10px) 0 0 0});
         .row {
-          p { text-align: left;
-            span { display: block; }
-          }
+          p { text-align: left; }
         }
       
         > img { position: absolute; bottom: 0; right: 0; z-index: -1; width: 24%; } 
@@ -893,9 +891,7 @@ a:hover { text-decoration: none; }
           a { text-decoration: none;
             span { display: block; text-decoration: none; } 
             .media-body { padding-top: emCalc(7px); font-size: emCalc(12px, 14px); font-weight: bold; color: $red-light; }
-            &:hover {
-              span { text-decoration: underline; } 
-            }
+            &:hover { text-decoration: none; }
           }
         }
       }
@@ -1013,24 +1009,37 @@ a:hover { text-decoration: none; }
         h1, h2, h3, h4, h5, h6 { color: $white; }
         .action { margin: emCalc(30px) 0 emCalc(10px); }
         
-        @media #{$small} { @include grid-column(4); padding: {left: 0; right: 0; top: 0;} }
+        @media #{$small} { @include grid-column(4); padding: emCalc(30px) 0 emCalc(10px); }
       }
       
       .left-side { @extend .clearfix; background: $white; border-bottom: emCalc(6px) solid $orange;
         > section { text-align: center; padding: emCalc(20px) $column-gutter!important; display: none;
           h1, h2, h3, h4, h5, h6 { text-align: center; }
-          h4 { line-height: 1.0; }
+          h4 { line-height: 1.0; }          
+          table { border: 0 none; width: 100%; margin: 0; background: none transparent; min-height: emCalc(240px);
+            td { vertical-align: middle; padding: 0; font-size: 1em; }
+          }
+          
           &.active { display: block; }
         }
       } 
       
       @media #{$small} { padding: {left: emCalc(20px); right: emCalc(20px);} margin: {left: 0; right: 0;};
         .left-side { @include grid-column(8); background: none transparent; border-bottom: 0 none;
-          > section { padding: 60px 21% 0!important; }
+          > section { padding: 60px 18% 0!important; }
         } 
-        .circle-bg { position: absolute; top: 7%; left: 3.3%; width: 60%; z-index: -1; background: $white; height: 190%; @include border-radius(#{100%}); border: emCalc(6px) solid $orange; border-bottom-width: 0; }
+        .circle-bg { position: absolute; top: 7%; left: 2.3%; width: 63%; z-index: -1; background: $white; height: 190%; @include border-radius(#{100%}); border: emCalc(6px) solid $orange; border-bottom-width: 0; }
       }
     } 
+    
+    // Event Catering    
+    // News slider
+    .wrapper-news-slider { background: $orange;
+      .orbit-container { background: none transparent;
+        .orbit-slides-container > * .orbit-caption { position: static; background: none transparent; padding: 0; width: auto; display: block; color: $brown-dark; max-width: none; margin: 0; font-size: 1em; }
+        .orbit-slides-container img { border: emCalc(3px) solid $white; margin: emCalc(31px) 0 emCalc(28px) emCalc(33px); }
+      }
+    }
     
     // Testimonials
     .testimonials-list { @extend .no-bullet; margin: 0;
@@ -1167,6 +1176,8 @@ a:hover { text-decoration: none; }
 // Thumbnail Image 
 a.thumbnail img, img.thumbnail { @include transition(#{all .3s}); background: $white; padding: 1px; border: emCalc(10px) solid $blue; @include inline-block; max-width: 100%; }
 a.thumbnail:hover img, img.thumbnail:hover { border-color: lighten($blue, 20%); }
+
+.th { padding: 2px; background: $white; }
 
 // Video thumb
 .video-thumb { margin: emCalc(15px) 0;
@@ -1359,20 +1370,28 @@ label {
 /* Special Classes */
 
 .red-text { color: $red; }
+
 .upper { text-transform: uppercase; 
   small { text-transform: none; }
 }
+
 .small { font-size: 70%; }
+
 .close-reveal-modal { text-decoration: none; }
+
 .no-marg-bottom { margin-bottom: 0!important; }
 .no-marg-top { margin-top: 0!important; } 
 .marg-bottom { margin-bottom: $paragraph-margin-bottom!important; }
 .marg-left { margin-left: emCalc(20px); }
+
 .no-border { border: 0 none!important; }
+
 @media #{$small} { 
   .large-right { float: right; }
   .marg-left-large { margin-left: emCalc(20px); }
 }
+
+.nowrap { white-space: nowrap; }
   
 
 /* -------------------------------------------------------------------------*/
