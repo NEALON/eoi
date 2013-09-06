@@ -30,9 +30,12 @@ $colour-img-border  :#e3decb;
 
 $footer-font-color: lighten($brown-dark, 20%);
 
+@import url(http://fonts.googleapis.com/css?family=Just+Another+Hand);
+
 // Fonts
 $font-arial     :Arial, "Helvetica Neue", Helvetica, sans-serif;
 $font-candara   :Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+$font-hand      :'Just Another Hand', cursive;
 
 // Font Awesome Path
 $fontAwesomePath: "../font";
@@ -137,6 +140,7 @@ h6 { font-family: $font-arial; }
 }
 
 .font-arial { font-family: $font-arial; }
+.font-hand { font-family: $font-hand; }
 
 hgroup {
   h4 { margin-bottom: 0; 
@@ -285,7 +289,7 @@ a:hover { text-decoration: none; }
 .sprites-contact-top { display: block; width: 66px; height: 45px; }
 .sprites-event-catering-top { display: block; height: 45px; width: 56px; }
 .sprites-chef { display: block; height: 65px; width: 77px; }
-
+.sprites-breakfast-top { display: block; width: 58px; height: 55px; }
 
 /* -------------------------------------------------------------------------*/
 /* #Navigation */
@@ -1015,10 +1019,6 @@ a:hover { text-decoration: none; }
     
     // Featured Video
     .wrapper-featured-video {
-      /*
-      .wrapper-video { position: relative; padding-bottom: 56.25%; padding-top: 25px; height: 0; 
-        iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-      }*/
       .block-information {
         p { line-height: emCalc(19px, 14px); }
       }
@@ -1051,6 +1051,72 @@ a:hover { text-decoration: none; }
       }
     }
     
+    
+    // Breakfast Catering and Delivery
+    .wrapper-breakfast {
+      .wrapper-breakfast-content { position: relative; z-index: 3;
+        h3 { color: $orange; }
+        p { text-align: center;
+          &.phones { font-weight: bold;  }
+        }
+      }
+      .wrapper-breakfast-middle { margin: 0 -#{$column-gutter / 2} emCalc(40px) -#{$column-gutter / 2}; padding: 0 #{$column-gutter / 2}; position: relative; z-index: 5; background-color: $red-light; border-bottom: 4px solid $blue;
+        p { color: $white; text-align: center;
+          &.first { padding-top: emCalc(17px, 20px); }
+          &.last {}
+        }
+      }
+      .wrapper-breakfast-bottom {
+        .font-hand { color: $red-light; }
+        p {
+          span { color: $red-light; }
+        }
+      }
+    
+      @media #{$small} {
+        .wrapper-breakfast-content { margin-top: emCalc(-20px); padding-top: emCalc(20px);
+          h3 { margin-top: 0; }
+          p { line-height: emCalc(19px, 14px); text-align: left;
+            &.phones { padding: emCalc(18px, 14px) 0 emCalc(18px, 14px) emCalc(28px, 14px);  }
+          }
+          .breakfast-content-bg { position: absolute; z-index: -1; top: 0; right: 0; width: 38%; height: 100%; background-color: $blue; }
+        } 
+        .wrapper-breakfast-middle { margin: 0 0 emCalc(40px) 0;
+          .breakfast-middle { @include grid-column(4, false, false, false, 2); 
+            .arrow-bg { position: relative; top: 100%; left: 50%;
+              &:before { content: ""; position: absolute; top: 0; left: 0; width: emCalc(22px); margin-left: emCalc(-11px); height: emCalc(16px); background-color: $red-light; }
+              &:after {  content: ""; position: absolute; top: emCalc(16px); left: emCalc(-30px); width: 0; height: 0; border-left: emCalc(30px) solid transparent; border-right: emCalc(30px) solid transparent; border-top: emCalc(20px) solid $red-light; }
+            }
+          }
+          .breakfast-clock-bg { position: absolute; z-index: -1; bottom: -26%; left: 0; width: 18%; }
+          .breakfast-bg { position: absolute; z-index: -1; bottom: -4px; right: 0; width: 51%; }
+          p { font: { family: $font-candara; size: emCalc(20px, 16px); } line-height: emCalc(18px, 20px); margin-bottom: emCalc(17px, 20px); text-align: left;
+            &.last { font-size: emCalc(22px, 16px); line-height: emCalc(18px, 22px); }
+          }
+        }
+        .wrapper-breakfast-bottom {
+          .font-hand { font-size: emCalc(62px, 16px); width: emCalc(40px, 62px); }
+          p { line-height: emCalc(19px, 14px); margin-left: emCalc(45px); }
+        }
+      }
+      @media #{$middle} {
+        .wrapper-breakfast-middle {
+          .breakfast-clock-bg { bottom: -20%; }
+        }
+      }
+      @media #{$tablet} {
+        .wrapper-breakfast-content {
+          p {
+            &.phones { padding: emCalc(10px, 14px) 0 emCalc(10px, 14px) emCalc(28px, 14px);  }
+          }
+        }
+        .wrapper-breakfast-middle {
+          .breakfast-clock-bg { bottom: -17%; }
+        }      
+      }
+    }
+    
+        
     // Business Solutions
     .wrapper-business-solutions { position: relative; z-index: 3;
       @media #{$small} {
