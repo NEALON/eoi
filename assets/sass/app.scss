@@ -31,11 +31,13 @@ $colour-img-border  :#e3decb;
 $footer-font-color: lighten($brown-dark, 20%);
 
 @import url(http://fonts.googleapis.com/css?family=Just+Another+Hand);
+@import url(http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister);
 
 // Fonts
 $font-arial     :Arial, "Helvetica Neue", Helvetica, sans-serif;
 $font-candara   :Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 $font-hand      :'Just Another Hand', cursive;
+$font-kids      :'Love Ya Like A Sister', cursive;
 
 // Font Awesome Path
 $fontAwesomePath: "../font";
@@ -141,6 +143,7 @@ h6 { font-family: $font-arial; }
 
 .font-arial { font-family: $font-arial; }
 .font-hand { font-family: $font-hand; }
+.font-kids { font-family: $font-kids; }
 
 hgroup {
   h4 { margin-bottom: 0; 
@@ -290,6 +293,7 @@ a:hover { text-decoration: none; }
 .sprites-event-catering-top { display: block; height: 45px; width: 56px; }
 .sprites-chef { display: block; height: 65px; width: 77px; }
 .sprites-breakfast-top { display: block; width: 58px; height: 55px; }
+.sprites-home-cofe { display: block; width: 75px; height: 45px; }
 
 /* -------------------------------------------------------------------------*/
 /* #Navigation */
@@ -514,6 +518,37 @@ a:hover { text-decoration: none; }
     
     @media #{$small} { 
       .slideshow-wrapper { margin-top: 0; }
+    }
+    
+    // Home page
+    .wrapper-home-cofe { position: relative; z-index: 5; border: emCalc(2px) solid $orange; @include border-radius(emCalc(15px)); @include background-image(linear-gradient(left, $orange -10%, $white 20%)); margin-bottom: $paragraph-margin-bottom;
+      p { padding: emCalc(11px, 14px) #{$column-gutter/2}; text-align: center; }
+      > img { position: absolute; left: emCalc(10px); bottom: -18%; z-index: -1; width: 12%; max-width: emCalc(75px);  }
+      
+      @media #{$small} { margin-bottom: 0;
+        p { margin-left: emCalc(100px, 14px); text-align: left; }
+      }
+      @media #{$middle} {}
+      @media #{$tablet} { 
+        p { padding: emCalc(11px, 14px) 0; font-size: emCalc(11px, 14px); }
+      }
+    }
+    
+    .block-whats-new { text-align: center; @include panel(lighten($yellow, 40%), #{5px 10px 0 10px}, true); @include box-shadow(rgba($black, .5) 2px 2px 10px);
+      h4 { font-size: emCalc(30px, 16px); margin-bottom: emCalc(12px, 30px); @include text-shadow(#{0 0 7px $white, 0 0 7px $white, 0 0 7px $white}); color: $red-light; }
+      strong { display: block; font-size: emCalc(14px, 16px); margin-bottom: emCalc(7px, 14px); }
+      p { font-size: emCalc(12px, 16px); line-height: emCalc(14px, 12px);
+        strong { font-size: emCalc(14px, 12px); }
+      }
+      
+      @media #{$small} { margin-bottom: 0; }
+      @media #{$middle} {}
+      @media #{$tablet} {
+      }    
+    }
+    
+    .block-home-content {
+      p { line-height: emCalc(19px, 14px); }
     }
     
     // Staff Unit
@@ -1083,6 +1118,7 @@ a:hover { text-decoration: none; }
         } 
         .wrapper-breakfast-middle { margin: 0 0 emCalc(40px) 0;
           .breakfast-middle { @include grid-column(4, false, false, false, 2); 
+            p { text-align: center; }
             .arrow-bg { position: relative; top: 100%; left: 50%;
               &:before { content: ""; position: absolute; top: 0; left: 0; width: emCalc(22px); margin-left: emCalc(-11px); height: emCalc(16px); background-color: $red-light; }
               &:after {  content: ""; position: absolute; top: emCalc(16px); left: emCalc(-30px); width: 0; height: 0; border-left: emCalc(30px) solid transparent; border-right: emCalc(30px) solid transparent; border-top: emCalc(20px) solid $red-light; }
