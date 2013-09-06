@@ -11,7 +11,7 @@
  
 // Colours 
 $white          :#ffffff; 
-$black          :#000000; 
+$black          :#000000;
 
 $blue           :#3ac5cf;
 $red            :#990000;
@@ -30,9 +30,12 @@ $colour-img-border  :#e3decb;
 
 $footer-font-color: lighten($brown-dark, 20%);
 
+@import url(http://fonts.googleapis.com/css?family=Just+Another+Hand);
+
 // Fonts
 $font-arial     :Arial, "Helvetica Neue", Helvetica, sans-serif;
 $font-candara   :Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+$font-hand      :'Just Another Hand', cursive;
 
 // Font Awesome Path
 $fontAwesomePath: "../font";
@@ -68,7 +71,7 @@ $fontAwesomePath: "../font";
 /* Generate Sprites */
 
 @import "sprites/*.png";
-@include all-sprites-sprites;
+@include all-sprites-sprites; 
 
 
 /* -------------------------------------------------------------------------*/
