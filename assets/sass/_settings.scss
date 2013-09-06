@@ -1169,9 +1169,9 @@ $table-margin-bottom: emCalc(15px);
 
 // Border styles
 
-// $thumb-border-style: solid;
-// $thumb-border-width: 4px;
-$thumb-border-color: $blue;
+$thumb-border-style: solid;
+$thumb-border-width: 1px;
+$thumb-border-color: lighten($brown-dark, 40%);
 $thumb-box-shadow: none; 
 // $thumb-box-shadow-hover: 0 0 6px 1px rgba($primary-color,0.5);
 
