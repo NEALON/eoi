@@ -1206,7 +1206,7 @@ a:hover { text-decoration: none; }
     .wrapper-news-slider { background: $orange; margin-bottom: emCalc(10px);
       .orbit-container { background: none transparent;
         .orbit-slides-container { 
-          > * { position: relative; z-index: 3; @include transition(#{all .5s}); @include opacity(0); @include scale(.8);
+          > * { position: relative; z-index: 3; @include transition(#{all .5s}); @include opacity(0); @include scale(.9);
             .bg-blue { background: $blue; position: absolute; top: 0; right: 0; height: 200%; width: 38.3%; z-index: -1; }
             .orbit-caption { position: static; background: none transparent; padding: 0; width: auto; display: block; color: $brown-dark; max-width: none; margin: 0 0 emCalc(128px) 0; font-size: 1em; 
               h3 { margin: 0 0 emCalc(25px, 28px) -33%; padding: emCalc(25px, 28px) emCalc(20px, 28px) emCalc(15px, 28px) 33%; background: $red-light; }
