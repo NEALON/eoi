@@ -1521,6 +1521,11 @@ blockquote { color: $brown-dark; border: 0 none; padding: 0; font: {size: 13px; 
     }
   }
   
+  // Phones
+  .phones {
+    p { font-size: emCalc(12px); }
+  }
+  
   // Copyright
   .copyright {
     p { font-size: emCalc(12px); }
@@ -1530,6 +1535,11 @@ blockquote { color: $brown-dark; border: 0 none; padding: 0; font: {size: 13px; 
         li { display: inline; white-space: nowrap; }
       }
     }
+  }
+  
+  // Post-content
+  .post-content {
+    p { font-size: emCalc(12px); }
   }
   
   @media #{$small} { text-align: left; padding: {left: emCalc(10px); right: emCalc(10px);}
