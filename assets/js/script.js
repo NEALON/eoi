@@ -65,6 +65,12 @@ var eoi = eoi || {};
       delay: 4300
     });
     
+    // Init Testimonials on Business Solutions page
+    eoi.testimonials({
+      wrapper: '#testimonials-catering',
+      delay: 4300
+    });
+    
     // Init Validate
     $('form').each(function() {
       $(this).validate({

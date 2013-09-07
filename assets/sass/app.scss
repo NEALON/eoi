@@ -89,9 +89,9 @@ html, body { background-color: $white;
   @media #{$small} { background-color: $body-bg; }
 }
 
-body { font-size: 0.913em;
+body { font-size: 0.93em;
   @media #{$small} { font-size: 1em; }
-  @media #{$tablet} { font-size: 0.913em; }
+  @media #{$tablet} { font-size: 0.9em; }
 }
 
 img { 
@@ -133,8 +133,11 @@ h4 { font-size: $h4-font-size - emCalc(1px); }
 h3, h4, h5 { font-weight: normal; }
 h6 { font-family: $font-arial; }
 
+ul, ol, dl { font-size: emCalc(13px); }
+
 .h-line { position: relative; z-index: 3;
-  &:after { content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; margin-top: -1px; }
+  > * { background: $white; padding-right: 14px; }
+  &:after { content: ''; z-index: -1; display: block; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: $red; }
 }
 
 .reveal-modal {
@@ -199,7 +202,7 @@ a:hover { text-decoration: none; }
   
   // More Button
   &.more { @include button(emCalc(4px), darken($alert-color, 8%), 2px); margin-right: emCalc(15px); position: relative; font: {size: emCalc(18px); family: $font-candara; weight: normal;} text-transform: uppercase; 
-    &:after { @include transition(#{all .3s}); position: absolute; top: -1px; right: -15px; content: ''; display: block; height: 0; width: 0; border: {top: 15px solid transparent; bottom: 15px solid transparent; left: 15px solid darken($alert-color, 8%);} }
+    &:after { @include transition(#{all .3s}); position: absolute; top: emCalc(-1px, 18px); right: emCalc(-15px, 18px); content: ''; display: block; height: 0; width: 0; border: {top: emCalc(15px, 18px) solid transparent; bottom: emCalc(15px, 18px) solid transparent; left: emCalc(15px, 18px) solid darken($alert-color, 8%);} }
     &:hover:after { border-left-color: darken(darken($alert-color, 8%), $button-function-factor); }
   }
   
@@ -447,7 +450,6 @@ a:hover { text-decoration: none; }
     
     @media #{$small} {
       h4 { 
-        > span { float: left; }
         > ul { font-size: emCalc(18px, 24px); float: right; margin: {left: emCalc(20px, 18px); bottom: 0;} 
           > li { float: left; }
         }
@@ -747,6 +749,32 @@ a:hover { text-decoration: none; }
         }
       } 
     }
+    
+    // Testimonials Catering
+    .wrapper-testimonials-catering {
+      h4 { font-size: emCalc(22px); 
+        @media #{$tablet} { font-size: emCalc(20px); }
+      }
+      .testimonials-list { font-size: 1em; padding: emCalc(15px) emCalc(30px); 
+        blockquote { font-size: emCalc(14px); }
+        table { border: 0 none; width: 100%; margin: 0; min-height: emCalc(166px); background: none transparent;
+          td { border: 0 none; vertical-align: middle; font-size: 1em; padding: 0; }
+        }
+      }
+      > div { position: relative; @include border-radius(#{emCalc(10px)}); z-index: 3; background: $white; border: emCalc(3px) solid $orange;
+        > img { position: absolute; bottom: 0; left: 0; max-height: 95%; max-width: 90%; margin: 0 5%; z-index: -1; }
+      }
+      
+      @media #{$small} { margin-bottom: emCalc(-101px); }
+    }
+    
+    // Get Quote
+    .wrapper-get-quote { @include border-radius(#{0 0 emCalc(10px) emCalc(5px)}); @extend .clearfix; background: $blue; margin-top: emCalc(-10px); padding: emCalc(10px) emCalc(30px) emCalc(10px); 
+      h1, h2, h3, h4, h5, h6 { color: $white; }
+    }
+    
+    // Services List
+    .services-list { padding: emCalc(20px) emCalc(25px) emCalc(10px); background: $red; color: $white; margin-bottom: emCalc(10px); }
     
     // FAQ Content
     .wrapper-faq-content { margin-top: emCalc(-20px); 
@@ -1258,6 +1286,11 @@ a:hover { text-decoration: none; }
           }
           hr { border-color: $grey; margin: emCalc(3px) 0; }
           p { font-size: emCalc(12px); margin-bottom: 0; }
+          
+          @media #{$small} {
+            td + td { vertical-align: top; }
+          }
+          @media #{$tablet} { min-height: emCalc(115px); }
         }
       }
       
@@ -1578,6 +1611,7 @@ label {
 .no-border { border: 0 none!important; }
 
 @media #{$small} { 
+  .left-large { float: left; }
   .large-right { float: right; }
   .marg-left-large { margin-left: emCalc(20px); }
   .marg-right-large { margin-right: emCalc(20px); }
