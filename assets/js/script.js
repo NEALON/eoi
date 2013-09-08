@@ -134,6 +134,12 @@ var eoi = eoi || {};
       else { $(this).addClass('active'); }
     });
     
+    // Phone popover
+    $('[data-show-joyride]').mouseover(function(e) {
+      e.preventDefault();      
+      $(document).foundation('joyride', 'start');
+    });
+    
   };
   
   
