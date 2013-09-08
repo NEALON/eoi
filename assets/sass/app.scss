@@ -1254,7 +1254,7 @@ a:hover { text-decoration: none; }
               h3 { background: $red-light; padding: 10px 15px; margin: -10px -15px 15px; }
               h3 > *, > div { @include transition(#{all 1s ease .5s}); @include opacity(0); }
               
-              @media #{$small} { margin: 0 0 emCalc(128px) 0; background: none transparent; 
+              @media #{$small} { margin: 0 0 emCalc(128px) 0; padding: 0; background: none transparent; 
                 h3 { margin: 0 0 emCalc(25px, 28px) -33%; padding: emCalc(25px, 28px) emCalc(20px, 28px) emCalc(15px, 28px) 33%; }
               }
             } 
@@ -1409,6 +1409,15 @@ a:hover { text-decoration: none; }
 
 .no-boxshadow {
   .polaroid-photobar-gallery > div > table img, .charity-unit .right-side > div img { border: 1px solid lighten($black, 50%); }
+}
+
+// Popover with Tel. Info
+.wrapper-tel-info { text-align: center;
+  hr { margin: emCalc(4px) 0 emCalc(5px); }
+  .addr { font: {size: $paragraph-font-size - emCalc(2px); style: italic;} margin-bottom: emCalc(8px, $paragraph-font-size-px); }
+  .label { font-size: emCalc(14px, $paragraph-font-size-px); }
+
+  @media #{$small} { text-align: left; }
 }
 
 // Gmap
