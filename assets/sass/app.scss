@@ -3,7 +3,7 @@
  * Front End Developer 
  * [http://twitter.com/eugenetsurcan] 
  * 
- */
+ */ 
 
 
 // ---------------------------------------------------------------------------
@@ -88,9 +88,9 @@ html, body { background-color: $white;
   @media #{$small} { background-color: $body-bg; }
 }
 
-body { font-size: 0.913em;
+body { font-size: 0.93em;
   @media #{$small} { font-size: 1em; }
-  @media #{$tablet} { font-size: 0.913em; }
+  @media #{$tablet} { font-size: 0.9em; }
 }
 
 img { 
@@ -132,8 +132,13 @@ h4 { font-size: $h4-font-size - emCalc(1px); }
 h3, h4, h5 { font-weight: normal; }
 h6 { font-family: $font-arial; }
 
+ul, ol, dl { font-size: emCalc(13px); }
+
 .h-line { position: relative; z-index: 3;
-  &:after { content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; margin-top: -1px; }
+  > * { background: $white; padding: 0 14px; 
+    @media #{$small} { padding: 0 14px 0 0; }
+  }
+  &:after { content: ''; z-index: -1; display: block; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: $red; }
 }
 
 .reveal-modal {
@@ -198,7 +203,7 @@ a:hover { text-decoration: none; }
   
   // More Button
   &.more { @include button(emCalc(4px), darken($alert-color, 8%), 2px); margin-right: emCalc(15px); position: relative; font: {size: emCalc(18px); family: $font-candara; weight: normal;} text-transform: uppercase; 
-    &:after { @include transition(#{all .3s}); position: absolute; top: -1px; right: -15px; content: ''; display: block; height: 0; width: 0; border: {top: 15px solid transparent; bottom: 15px solid transparent; left: 15px solid darken($alert-color, 8%);} }
+    &:after { @include transition(#{all .3s}); position: absolute; top: emCalc(-1px, 18px); right: emCalc(-15px, 18px); content: ''; display: block; height: 0; width: 0; border: {top: emCalc(15px, 18px) solid transparent; bottom: emCalc(15px, 18px) solid transparent; left: emCalc(15px, 18px) solid darken($alert-color, 8%);} }
     &:hover:after { border-left-color: darken(darken($alert-color, 8%), $button-function-factor); }
   }
   
@@ -451,7 +456,6 @@ a:hover { text-decoration: none; }
     
     @media #{$small} {
       h4 { 
-        > span { float: left; }
         > ul { font-size: emCalc(18px, 24px); float: right; margin: {left: emCalc(20px, 18px); bottom: 0;} 
           > li { float: left; }
         }
@@ -753,6 +757,36 @@ a:hover { text-decoration: none; }
         }
       } 
     }
+    
+    // Testimonials Catering
+    .wrapper-testimonials-catering { margin: emCalc(15px) 0;
+      h4 { font-size: emCalc(22px); 
+        @media #{$tablet} { font-size: emCalc(20px); }
+      }
+      .testimonials-list { font-size: 1em; padding: emCalc(15px) emCalc(30px); 
+        blockquote { font-size: emCalc(14px); }
+        table { border: 0 none; width: 100%; margin: 0; min-height: emCalc(166px); background: none transparent;
+          td { border: 0 none; vertical-align: middle; font-size: 1em; padding: 0; }
+        }
+      }
+      > div { position: relative; @include border-radius(#{emCalc(10px)}); z-index: 3; background: $white; border: emCalc(3px) solid $orange;
+        > img { position: absolute; bottom: 0; left: 0; max-height: 95%; max-width: 90%; margin: 0 5%; z-index: -1; }
+      }
+      
+      @media #{$small} { margin: 0 0 emCalc(-101px); } 
+    }
+    
+    // Get Quote
+    .wrapper-get-quote { @include border-radius(#{emCalc(10px)}); margin: emCalc(15px) 0; @extend .clearfix; background: $blue; padding: emCalc(10px) emCalc(30px) emCalc(10px); 
+      h1, h2, h3, h4, h5, h6 { color: $white; }
+      
+      @media #{$small} { margin: emCalc(-10px) 0 0 0; @include border-radius(#{0 0 emCalc(10px) emCalc(5px)}); }
+    }
+    
+    // Services List
+    .services-list { 
+      @media #{$small} { padding: emCalc(20px) emCalc(25px) emCalc(10px); background: $red; color: $white; margin-bottom: emCalc(10px); }
+    } 
     
     // FAQ Content
     .wrapper-faq-content { margin-top: emCalc(-20px); 
@@ -1209,14 +1243,20 @@ a:hover { text-decoration: none; }
     
     // Event Catering    
     // News slider
-    .wrapper-news-slider { background: $orange; margin-bottom: emCalc(10px);
+    .wrapper-news-slider { background: none transparent; margin: emCalc(10px) 0 emCalc(20px);
       .orbit-container { background: none transparent;
         .orbit-slides-container { 
           > * { position: relative; z-index: 3; @include transition(#{all .5s}); @include opacity(0); @include scale(.9);
-            .bg-blue { background: $blue; position: absolute; top: 0; right: 0; height: 200%; width: 38.3%; z-index: -1; }
-            .orbit-caption { position: static; background: none transparent; padding: 0; width: auto; display: block; color: $brown-dark; max-width: none; margin: 0 0 emCalc(128px) 0; font-size: 1em; 
-              h3 { margin: 0 0 emCalc(25px, 28px) -33%; padding: emCalc(25px, 28px) emCalc(20px, 28px) emCalc(15px, 28px) 33%; background: $red-light; }
+            @media #{$small} {
+              .bg-blue { background: $blue; position: absolute; top: 0; right: 0; height: 200%; width: 38.3%; z-index: -1; }
+            }
+            .orbit-caption { background: $blue; position: static; padding: 10px 15px 25px; width: auto; display: block; color: $brown-dark; max-width: none; margin: 0; font-size: 1em; 
+              h3 { background: $red-light; padding: 10px 15px; margin: -10px -15px 15px; }
               h3 > *, > div { @include transition(#{all 1s ease .5s}); @include opacity(0); }
+              
+              @media #{$small} { margin: 0 0 emCalc(128px) 0; padding: 0; background: none transparent; 
+                h3 { margin: 0 0 emCalc(25px, 28px) -33%; padding: emCalc(25px, 28px) emCalc(20px, 28px) emCalc(15px, 28px) 33%; }
+              }
             } 
             
             &.active { @include transition(#{all 1s}); @include opacity(1); @include scale(1); 
@@ -1225,11 +1265,15 @@ a:hover { text-decoration: none; }
               }
             }
           }
-          .wrapper-img { position: relative; z-index: 3; padding: emCalc(31px) 6.2% emCalc(28px) 5.7%;
+          .wrapper-img { background: $orange; position: relative; z-index: 3; padding: 20px 15px 15px;
             img { border: emCalc(3px) solid $white; @include box-shadow(#{emCalc(5px) emCalc(-5px) emCalc(20px) emCalc(-4px) lighten($black, 20%)}); }
+          
+            @media #{$small} { background: none transparent; padding: emCalc(31px) 6.2% emCalc(28px) 5.7%; }
           }
         }
       }
+      
+      @media #{$small} { background: $orange; margin: emCalc(10px) 0; }
     }
     
     // Testimonials
@@ -1264,6 +1308,11 @@ a:hover { text-decoration: none; }
           }
           hr { border-color: $grey; margin: emCalc(3px) 0; }
           p { font-size: emCalc(12px); margin-bottom: 0; }
+          
+          @media #{$small} {
+            td + td { vertical-align: top; }
+          }
+          @media #{$tablet} { min-height: emCalc(115px); }
         }
       }
       
@@ -1362,6 +1411,15 @@ a:hover { text-decoration: none; }
   .polaroid-photobar-gallery > div > table img, .charity-unit .right-side > div img { border: 1px solid lighten($black, 50%); }
 }
 
+// Popover with Tel. Info
+.wrapper-tel-info { text-align: center;
+  hr { margin: emCalc(4px) 0 emCalc(5px); }
+  .addr { font: {size: $paragraph-font-size - emCalc(2px); style: italic;} margin-bottom: emCalc(8px, $paragraph-font-size-px); }
+  .label { font-size: emCalc(14px, $paragraph-font-size-px); }
+
+  @media #{$small} { text-align: left; }
+}
+
 // Gmap
 .gm-style {
   img { max-width: none; }
@@ -1379,9 +1437,12 @@ a.thumbnail:hover img, img.thumbnail:hover { border-color: lighten($blue, 20%); 
     &:hover { @include opacity(1); } 
   }
   
-  &.overlay { @include transition(#{box-shadow .3s}); position: relative; z-index: 5; margin-top: emCalc(-95px); @include box-shadow(#{0 emCalc(-3px) emCalc(15px) emCalc(-2px) lighten($black, 20%)}); 
-    .th { @include opacity(1); }
-    &:hover { @include box-shadow(#{none}); }
+  &.overlay { @include transition(#{box-shadow .3s}); position: relative; z-index: 5; margin: emCalc(15px) 0;
+    .th { @include opacity(1); @include box-shadow(#{0 emCalc(-3px) emCalc(15px) emCalc(-2px) lighten($black, 20%)}); 
+      &:hover { @include box-shadow(#{none}); }
+    }
+    
+    @media #{$small} { margin: emCalc(-95px) 0 0 0; }
   }
 } 
 
@@ -1597,6 +1658,7 @@ label {
 .no-border { border: 0 none!important; }
 
 @media #{$small} { 
+  .left-large { float: left; }
   .large-right { float: right; }
   .marg-left-large { margin-left: emCalc(20px); }
   .marg-right-large { margin-right: emCalc(20px); }
