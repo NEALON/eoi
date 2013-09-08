@@ -30,8 +30,7 @@ $colour-img-border  :#e3decb;
 
 $footer-font-color: lighten($brown-dark, 20%);
 
-@import url(http://fonts.googleapis.com/css?family=Just+Another+Hand);
-@import url(http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister);
+@import url(http://fonts.googleapis.com/css?family=Just+Another+Hand|Love+Ya+Like+A+Sister);
 
 // Fonts
 $font-arial     :Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -290,6 +289,11 @@ a:hover { text-decoration: none; }
   }
 }
 
+// joyride
+.joyride-content-wrapper {
+  a { color: $white; font-weight: bold; text-decoration: none; }
+}
+
 .sprites-icon-tell-friend { display: block; height: 28px; width: 40px; }
 .sprites-icon-email { display: block; height: 32px; width: 33px; }
 .sprites-business-solutions-top { display: block; width: 47px; height: 47px; }
@@ -532,7 +536,9 @@ a:hover { text-decoration: none; }
       @media #{$small} { margin-bottom: 0;
         p { margin-left: emCalc(100px, 14px); text-align: left; }
       }
-      @media #{$middle} {}
+      @media #{$middle} {
+        p { padding: emCalc(11px, 14px) 0; font-size: emCalc(11px, 14px); }
+      }
       @media #{$tablet} { 
         p { padding: emCalc(11px, 14px) 0; font-size: emCalc(11px, 14px); }
       }
@@ -1236,8 +1242,8 @@ a:hover { text-decoration: none; }
     // Footer Information
     .footer-info { margin-top: emCalc(55px);
       .testimonials-list {
-        blockquote { color: $white; font: {style: normal; size: emCalc(14px);}
-          cite { padding-left: emCalc(16px); color: $white; font-style: italic; }
+        blockquote { color: $white; font: {style: normal; size: emCalc(14px, 14px);}
+          cite { color: $white; text-align: right; }
         }
       }
       .wrapper-top { background: image-url("blue-top-bg.gif") 0 0 repeat-x $blue; margin: {top: emCalc(30px); left: #{-$column-gutter / 2}; right: #{-$column-gutter / 2}}; padding: {left: #{$column-gutter / 2}; right: #{$column-gutter / 2}}
@@ -1265,36 +1271,39 @@ a:hover { text-decoration: none; }
         .wrapper-top { margin: {left: -$column-gutter; right: -$column-gutter}; padding: {left: $column-gutter; right: $column-gutter} }
       }
       
-      .wrapper-bottom { @include box-shadow(#{inset -6px -6px 40px 10px $red-dark}); background: #c43a2d; color: $white; @extend .clearfix; margin: {left: #{-$column-gutter / 2}; right: #{-$column-gutter / 2}}; padding: {left: #{$column-gutter / 2}; right: #{$column-gutter / 2}} 
+      .wrapper-bottom { @include box-shadow(#{inset -6px -6px 40px 10px $red-dark}); background: #c43a2d; color: $white; margin: {left: #{-$column-gutter / 2}; right: #{-$column-gutter / 2}}; padding: {left: #{$column-gutter / 2}; right: #{$column-gutter / 2}} 
         a { text-decoration: none; color: $white; }
-        > ul { position: relative; @extend .no-bullet; @extend .clearfix; font-size: 1em; margin: emCalc(15px) 0;
-          > [class^="col-"], > [class*=" col-"] { @include background-image(radial-gradient(68% 50%, darken(#c43a2d, 10%) 20%, rgba(#c43a2d, 0) 100%)); }
-          
-          @media #{$small} {
-            > [class^="col-"], > [class*=" col-"] { float: left; }
-            
-            .col-left { width: 36%; }
-            .col-middle, .col-right { width: 32%; }
-            
-            [class^="devider-"], [class*=" devider-"] { position: absolute; top: 0; height: 100%; width: 1px; border-left: 1px solid #a8211a; border-right: 1px solid #d64e48; }
-            .devider-left { left: 36%; }
-            .devider-right { left: 68%; }
+        .wrapper { padding: { left: #{$column-gutter}; right: #{$column-gutter}; } }
+        .inner { margin: {left: #{-$column-gutter / 2}; right: #{-$column-gutter / 2}}; padding: { top: $column-gutter; bottom: $column-gutter; } }
+        
+        
+        @media #{$small} { @include border-radius(#{0 0 5px 5px}); margin: {left: -$column-gutter; right: -$column-gutter}; 
+          .video-thumb { margin: 0; }
+          .wrapper { padding: #{$column-gutter / 2} #{$column-gutter * 2}; }          
+          .inner { margin: {left: #{-$column-gutter / 2}; right: #{-$column-gutter / 2}}; padding: { top: $column-gutter; bottom: $column-gutter; }
+            ul { margin: 0; position: relative; z-index: 5;
+              li {
+                &.li-column { float: left; width: 33.33%;
+                  .block-responsive { position: relative; z-index: 5; background-color: $orange; padding: #{$column-gutter / 2}; @include border-radius(emCalc(15px));
+                    > img { position: absolute; bottom: #{$column-gutter / 2}; left: #{$column-gutter / 2}; z-index: -1; width: 54%;  }
+                    p { margin-left: 45%; margin-bottom: emCalc(27px, 14px); width: 43%; font-size: emCalc(13px, 14px); line-height: emCalc(15px, 13px); @include text-shadow(#{0 0 5px $red-dark}); 
+                      @media #{$tablet} { width: 55%; }
+                    }
+                    a { float: right; width: 38%; margin: 0; }
+                  } 
+                }
+                &.li-border { position: absolute; top: 0; width: 2px; height: 100%; border: {left: 1px solid #a8211a; right: 1px solid #d64e48; };
+                  &.border-left { left: 33.33%; } 
+                  &.border-right { right: 33.33%; }
+                } 
+              }
+            }
           }
         }
-        
-        .wrapper { margin: emCalc(10px) emCalc(30px);
-          // List Testimonials 
-          .testimonials-list { @extend .no-bullet; margin: 0; font-size: 1em; }          
-          
-          .vcard + .vcard { margin-bottom: 0; }
-        }
-        
-        .video-thumb { margin: 0; }
+        @media #{$middle} {}
+        @media #{$tablet} {}
       }
       
-      @media #{$small} {
-        .wrapper-bottom { @include border-radius(#{0 0 5px 5px}); margin: {left: -$column-gutter; right: -$column-gutter}; padding: {left: $column-gutter; right: $column-gutter} }
-      }
     }
     
     // Restaurant Logos and Companies Logos
@@ -1517,6 +1526,11 @@ blockquote { color: $brown-dark; border: 0 none; padding: 0; font: {size: 13px; 
     }
   }
   
+  // Phones
+  .phones {
+    p { font-size: emCalc(12px); }
+  }
+  
   // Copyright
   .copyright {
     p { font-size: emCalc(12px); }
@@ -1526,6 +1540,11 @@ blockquote { color: $brown-dark; border: 0 none; padding: 0; font: {size: 13px; 
         li { display: inline; white-space: nowrap; }
       }
     }
+  }
+  
+  // Post-content
+  .post-content {
+    p { font-size: emCalc(12px); }
   }
   
   @media #{$small} { text-align: left; padding: {left: emCalc(10px); right: emCalc(10px);}
