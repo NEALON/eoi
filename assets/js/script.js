@@ -146,6 +146,11 @@ var eoi = eoi || {};
       $(document).foundation('joyride', 'start');
     });
     
+    // Phone popover (touch screen)
+    $('.touch [data-show-joyride]').click(function(e) {
+      e.preventDefault();      
+      $(document).foundation('joyride', 'start');
+    });
   };
   
   
