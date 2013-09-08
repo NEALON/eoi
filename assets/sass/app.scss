@@ -1335,7 +1335,7 @@ a:hover { text-decoration: none; }
                 &.li-column { float: left; width: 33.33%;
                   .block-responsive { position: relative; z-index: 5; background-color: $orange; padding: #{$column-gutter / 2}; @include border-radius(emCalc(15px));
                     > img { position: absolute; bottom: #{$column-gutter / 2}; left: #{$column-gutter / 2}; z-index: -1; width: 54%;  }
-                    p { margin-left: 45%; margin-bottom: emCalc(27px, 14px); width: 43%; font-size: emCalc(13px, 14px); line-height: emCalc(15px, 13px); @include text-shadow(#{0 0 5px $red-dark}); 
+                    p { margin-left: 45%; font-size: emCalc(13px, 13px); line-height: emCalc(15px, 13px); margin-bottom: emCalc(31px, 13px); width: 43%; @include text-shadow(#{0 0 5px $red-dark}); 
                       @media #{$tablet} { width: 55%; }
                     }
                     a { float: right; width: 38%; margin: 0; }
