@@ -50,6 +50,10 @@ var eoi = eoi || {};
       if($('body').hasClass('navigation-open')) $('body').removeClass('navigation-open');
     });   
     
+    $(document).on('click', 'nav', function(e) {
+      $("html, body").animate({ scrollTop: $(this).offset().top }, 1000);
+    })
+    
     // Init Testiomonials
     eoi.testimonials(); 
     
@@ -140,17 +144,12 @@ var eoi = eoi || {};
       else { $(this).addClass('active'); }
     });
     
-    // Phone popover
-    $('[data-show-joyride]').mouseover(function(e) {
-      e.preventDefault();      
-      $(document).foundation('joyride', 'start');
+    // Sections hover
+    $('[data-section] a').mouseenter(function(e) {
+        e.preventDefault();
+        window.location.hash = this.hash;
     });
     
-    // Phone popover (touch screen)
-    $('.touch [data-show-joyride]').click(function(e) {
-      e.preventDefault();      
-      $(document).foundation('joyride', 'start');
-    });
   };
   
   
