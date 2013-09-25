@@ -68,7 +68,7 @@
           <!-- Soc list icons -->
           <div class="soc-list">
             <ul class="inline-list">
-              <li><a href="#" title="Phone" class="tel icon-soc" data-show-joyride><i class="icon-phone"></i></a></li>
+              <li><a href="#" title="Phone" class="tel icon-soc" data-dropdown="phoneDrop" data-options="is_hover:true"><i class="icon-phone"></i></a></li>
               <li><a href="#" title="Facebook" class="facebook icon-soc"><i class="icon-facebook"></i></a></li>
               <li><a href="#" title="Twitter" class="twitter icon-soc"><i class="icon-twitter"></i></a></li>
               <li><a href="#" title="Pinterest" class="pinterest icon-soc"><i class="icon-pinterest"></i></a></li>
@@ -77,22 +77,20 @@
         </div>        
       </div>
 
-      <!-- joyride block -->
-      <ol data-joyride style="display: none;">
-        <li data-options="nextButton:false"> 
-          <div class="wrapper-tel-info"> 
-            <h5>Austin</h5>
-            <hr />      
-            <p class="addr">11673 Jollyville Rd, Austin, TX 78759.</p>
-            <p>Phone: <span itemprop="telephone" class="label round success"><a href="tel:5123469990">512-346-9990</a></span></p>
-            
-            <h5>San Antonio</h5>
-            <hr />
-            <p class="addr">1230 West Ave., San Antonio, TX 78213.</p>
-            <p class="no-marg-bottom">Phone: <span itemprop="telephone" class="label round success"><a href="tel:2104473777">210-447-3777</a></span></p>
-          </div>  
-        </li>
-      </ol>
+      <!-- Drop block -->
+      <div id="phoneDrop" class="f-dropdown content small" data-dropdown-content>
+        <div class="wrapper-tel-info"> 
+          <h5>Austin</h5>
+          <hr />      
+          <p class="addr">11673 Jollyville Rd, Austin, TX 78759.</p>
+          <p>Phone: <span itemprop="telephone" class="label round success"><a href="tel:5123469990">512-346-9990</a></span></p>
+          
+          <h5>San Antonio</h5>
+          <hr />
+          <p class="addr">1230 West Ave., San Antonio, TX 78213.</p>
+          <p class="no-marg-bottom">Phone: <span itemprop="telephone" class="label round success"><a href="tel:2104473777">210-447-3777</a></span></p>
+        </div> 
+      </div>
       
       <!-- Search Restaurants Block (Mobile) -->
       <section class="search-resaurants mobile show-for-small">
@@ -142,7 +140,7 @@
               <!-- Soc list icons -->
               <div class="soc-list right show-for-small">
                 <ul class="inline-list">
-                  <li><a href="#" title="Phone" class="tel icon-soc" data-show-joyride><i class="icon-phone"></i></a></li>
+                  <li><a href="#" title="Phone" class="tel icon-soc" data-dropdown="phoneDrop" data-options="is_hover:true"><i class="icon-phone"></i></a></li>
                   <li><a href="#" title="Facebook" class="facebook icon-soc"><i class="icon-facebook"></i></a></li>
                   <li><a href="#" title="Twitter" class="twitter icon-soc"><i class="icon-twitter"></i></a></li>
                   <li><a href="#" title="Pinterest" class="pinterest icon-soc"><i class="icon-pinterest"></i></a></li>
@@ -185,7 +183,7 @@
             
             <section class="row wrapper-business-solutions">
               <div class="large-4 small-12 columns push-8">
-                <div class="panel-red video-thumb text-center">
+                <div class="panel-red video-thumb text-center hide-for-small">
                   <a href="./modals/home-video.html" data-reveal-id="modal-small" data-reveal-ajax="true" class="th">
                     <img data-breakpoint="" src="./assets/images/thumb-video-2.jpg" alt="Click and play!" title="Click and play!">
                   </a>
@@ -298,6 +296,12 @@
                         </tr>
                       </table>
                     </section>
+                    
+                    <div class="panel-red video-thumb text-center show-for-small">
+                      <a href="./modals/home-video.html" data-reveal-id="modal-small" data-reveal-ajax="true" class="th">
+                        <img data-breakpoint="" src="./assets/images/thumb-video-2.jpg" alt="Click and play!" title="Click and play!">
+                      </a>
+                    </div>
                   </div>
                 <!-- END: Left Content Service -->
                 

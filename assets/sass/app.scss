@@ -141,6 +141,10 @@ ul, ol, dl { font-size: emCalc(13px); }
   &:after { content: ''; z-index: -1; display: block; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: $red; }
 }
 
+.label.success {
+  a { color: $white; text-decoration: none; }
+}
+
 .reveal-modal {
   .lead { text-align: left; }
   h2 { font-size: $h2-font-size - emCalc(12px); 
@@ -249,7 +253,7 @@ a:hover { text-decoration: none; }
   }  
   
   // Choose Hotels (Mobile)
-  .choose-hotels { padding-bottom: emCalc(18px); font-size: emCalc(13px);
+  .choose-hotels { padding-bottom: emCalc(7px); margin-top: emCalc(-12px); font-size: emCalc(13px);
     h3 { font-weight: normal; color: $orange-dark; margin: 0; 
       > span { line-height: 37px; vertical-align: middle; }
       > .button { @include button($button-sml, $orange, $button-radius); margin: 0 0 0 emCalc(10px); }
@@ -297,6 +301,26 @@ a:hover { text-decoration: none; }
 // joyride
 .joyride-content-wrapper {
   a { color: $white; font-weight: bold; text-decoration: none; }
+}
+
+//Drop
+
+#phoneDrop {
+  &.f-dropdown{
+    &:before, &:after { display: none; }
+    
+    @media #{$small} {
+      &:before, &:after { display: block; }
+    }
+  }
+  
+  &.right {
+    &:before, &:after { display: none; }
+    
+    @media #{$small} {
+      &:before, &:after { display: block; }
+    }
+  }
 }
 
 .sprites-icon-tell-friend { display: block; height: 28px; width: 40px; }
@@ -548,7 +572,7 @@ a:hover { text-decoration: none; }
       }
     }
     
-    .block-whats-new { text-align: center; @include panel(lighten($yellow, 40%), #{5px 10px 0 10px}, true); @include box-shadow(rgba($black, .5) 2px 2px 10px);
+    .block-whats-new { text-align: center; @include panel(lighten($yellow, 40%), #{5px 10px 0 10px}, true); @include box-shadow(rgba($black, .5) 2px 2px 10px); margin-top: emCalc(25px, 16px);
       h4 { font-size: emCalc(30px, 16px); margin-bottom: emCalc(12px, 30px); @include text-shadow(#{0 0 7px $white, 0 0 7px $white, 0 0 7px $white}); color: $red-light; }
       strong { display: block; font-size: emCalc(14px, 16px); margin-bottom: emCalc(7px, 14px); }
       p { font-size: emCalc(12px, 16px); line-height: emCalc(14px, 12px);
@@ -558,6 +582,7 @@ a:hover { text-decoration: none; }
       @media #{$small} { margin-bottom: 0; }
       @media #{$middle} {}
       @media #{$tablet} {
+        h4 { font-size: emCalc(22px, 14px); font-family: $font-arial; }
       }    
     }
     
@@ -1237,7 +1262,10 @@ a:hover { text-decoration: none; }
         .left-side { @include grid-column(8); background: none transparent; border-bottom: 0 none;
           > section { padding: 60px 18% 0!important; }
         } 
-        .circle-bg { position: absolute; top: 7%; left: 2.3%; width: 63%; z-index: -1; background: $white; height: 190%; @include border-radius(#{100%}); border: emCalc(6px) solid $orange; border-bottom-width: 0; }
+        .circle-bg { position: absolute; top: 7%; left: 2.3%; width: 63%; z-index: -1; background: $white; height: 190%; @include border-radius(#{100%}); border: emCalc(6px) solid $orange; border-bottom-width: 0;
+          @media #{$tablet} { @include border-radius(#{0}); }
+          @media #{$middle} { @include border-radius(#{0}); }
+        }
       }
     } 
     
@@ -1612,7 +1640,9 @@ blockquote { color: $brown-dark; border: 0 none; padding: 0; font: {size: 13px; 
     .copyright .links { text-align: right; }  
   }
   
-  @media #{$tablet} { font-size: emCalc(15px); }
+  @media #{$tablet} { font-size: emCalc(15px);
+    p, .phones p, .copyright p, .post-content p { font-size: emCalc(11px, 12px); }
+  } 
 }
 
 
